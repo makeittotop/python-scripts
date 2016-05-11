@@ -1,0 +1,73 @@
+# -*- coding: utf-8 -*-
+import tractor.api.query as tq
+import time
+from dateutil.parser import parse
+#!/usr/bin/env python
+
+from datetime import datetime, timedelta
+import pytz
+
+tq.setEngineClientParam(hostname="localhost", port=1503, user="abhishek", debug=False)
+
+(active_jobs, waiting_jobs, paused_jobs) = (list(), list(), list())
+
+jobs = tq.jobs("not done", sortby=['jid'])
+
+def humanize_time(secs):
+    mins, secs = divmod(secs, 60)
+    hours, mins = divmod(mins, 60)
+    return '%02d:%02d:%02d' % (hours, mins, secs)
+
+for job in jobs:
+    if job['numactive'] is 0 and job['pausetime'] is None and job['numdone'] == 0:
+        waiting_jobs.append(job)
+    elif job['numactive'] is 0 and job['pausetime'] is None and job['numdone'] != 0:
+        waiting_jobs.append(job)
+    elif job['numactive'] is 0 and job['pausetime'] is not None:
+        paused_jobs.append(job)
+    else:
+        active_jobs.append(job)
+
+def analyze_jobs(jobs):
+    for job in active_jobs:
+        tasks = tq.tasks("jid={0}".format(job['jid']))
+        (active_tasks, done_tasks) = (filter(lambda x: x['state'] == 'active', tasks), filter(lambda x: x['state'] == 'done', tasks))
+        
+        done_time_total = 0
+        for task in done_tasks:
+            done_time_total += tq.invocations("jid={0} and tid={1}".format(task['jid'], task['tid']))[0]['elapsedreal']
+            print task['tid'], time.strftime('%H:%M:%S', time.gmtime(tq.invocations("jid={0} and tid={1}".format(task['jid'], task['tid']))[0]['elapsedreal']))
+
+        done_time_avg = done_time_total / float(len(done_tasks))
+        print "Job: ", job['jid'], " average done task time atm: ", time.gmtime(done_time_avg)
+
+        for task in active_tasks:
+            active_time = parse(task['statetime']).replace(tzinfo=None)
+            active_duration = (datetime.now() - d).seconds
+            print "Job: ", job['jid'], ", Active task: ", task['tid'], time.strftime('%H:%M:%S', time.gmtime(active_duration))
+            
+            
+        
+
+            
+for job in active_jobs:
+    tasks = tq.tasks("jid={0}".format(job['jid']))
+    (active_tasks, done_tasks) = (filter(lambda x: x['state'] == 'active', tasks), filter(lambda x: x['state'] == 'done', tasks))
+        
+    done_time_total = 0
+    for task in done_tasks:
+        done_time_total += tq.invocations("jid={0} and tid={1}".format(task['jid'], task['tid']))[0]['elapsedreal']
+        print task['tid'], time.strftime('%H:%M:%S', time.gmtime(tq.invocations("jid={0} and tid={1}".format(task['jid'], task['tid']))[0]['elapsedreal']))
+    if done_tasks:
+        done_time_avg = done_time_total / float(len(done_tasks))
+        print "Job: ", job['jid'], " average done task time atm: ", humanize_time(done_time_avg) #time.strftime('%H:%M:%S', time.gmtime(done_time_avg))
+
+    for task in active_tasks:
+        active_time = parse(task['statetime'].split('+')[0])
+        foo = datetime.now() -  active_time
+        active_duration = foo.seconds + foo.days * 3600 * 24
+        print "Job: ", job['jid'], ", Active task: ", task['tid'], humanize_time(active_duration) #time.strftime('%H:%M:%S', time.gmtime(active_duration))
+
+        #print "Job: ", job['jid'], ", Active task: ", task['tid'], str(timedelta(seconds=active_duration))
+        
+      

@@ -1,0 +1,43 @@
+/*---------------------------------------------- 
+Retina
+------------------------------------------------*/
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2) {
+			
+	.open-responsive-nav span,
+	.single-pagination li a,
+	#entries-pagination li a,
+	.close-project a,
+	.easy-opener-close,
+	.easy-opener-next,
+	.easy-opener-prev,
+	.flex-direction-nav a,
+	.tp-leftarrow.default, .tp-rightarrow.default,
+	.owl-theme .owl-controls .owl-buttons div,
+	.fancybox-close, .fancybox-prev span, .fancybox-next span 
+	{
+		background-image: url(../images/retina/sprites@2x.png);
+		-webkit-background-size: 480px 40px; 
+	   	-moz-background-size: 480px 40px; 
+	    -o-background-size: 480px 40px; 
+		background-size: 480px 40px; 
+	}
+	
+	.socialmedia-widget li a
+	{
+		background-image: url(../images/retina/social-icons@2x.png);
+		-webkit-background-size: 540px 90px; 
+	   	-moz-background-size: 540px 90px; 
+	    -o-background-size: 540px 90px; 
+		background-size: 540px 90px; 
+	}
+	
+	a.jp-play, a.jp-pause, a.jp-mute, a.jp-unmute {
+		background-image: url(../jplayer/controls@2x.png);
+		-webkit-background-size: 120px 60px; 
+	   	-moz-background-size: 120px 60px; 
+	    -o-background-size: 120px 60px; 
+		background-size: 120px 60px; 
+	}
+
+	
+}

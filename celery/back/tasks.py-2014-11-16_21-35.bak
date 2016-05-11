@@ -1,0 +1,62 @@
+#!/usr/bin/env python2.7
+
+from celery import Celery, Task
+
+from log import register_task_logger
+import logging
+
+app = Celery('tasks')
+app.config_from_object('celeryconfig')
+
+def get_or_create_task_logger(func):
+    """ A helper function to create function specific logger lazily. """
+
+    # https://docs.python.org/2/library/logging.html?highlight=logging#logging.getLogger
+    # This will always result the same singleton logger
+    # based on the task's function name (does not check cross-module name clash, 
+    # for demo purposes only)
+    logger = logging.getLogger(func.__name__)
+
+    # Add our custom logging handler for this logger only
+    # You could also peek into Celery task context variables here
+    #  http://celery.readthedocs.org/en/latest/userguide/tasks.html#context
+    if len(logger.handlers) == 0:
+        # Log to output file based on the function name
+        hdlr = logging.FileHandler('%s.log' % func.__name__)
+        formatter = logging.Formatter(
+             '%(asctime)s %(levelname)s [%(name)s: %(lineno)s] -- %(message)s',
+             '%m-%d-%Y %H:%M:%S'
+        )
+        hdlr.setFormatter(formatter)
+        logger.addHandler(hdlr) 
+        logger.setLevel(logging.DEBUG)
+
+    return logger
+
+@app.task
+def add(x, y):
+    logger = get_or_create_task_logger(add)
+    logger.info("Calling task add(%d, %d)" % (x, y))
+    return x + y
+
+@app.task
+def mult(x, y):
+    logger = get_or_create_task_logger(mult)
+    logger.info("Calling task mult(%d, %d)" % (x, y))
+    return x * y
+
+'''
+@app.task
+@register_task_logger(__name__)
+class AddTask(Task):
+    def run(self, x, y):
+        self.log.info("Calling task AddTask(%d, %d)" % (x, y))
+        return x + y
+
+@app.task
+@register_task_logger(__name__)
+class MultTask(Task):
+    def run(self, x, y):
+        self.log.info("Calling task mult(%d, %d)" % (x, y))
+        return x * y
+'''

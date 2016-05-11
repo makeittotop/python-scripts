@@ -1,0 +1,775 @@
+[2014-11-16 18:25:26,828: DEBUG/MainProcess] | Worker: Preparing bootsteps.
+[2014-11-16 18:25:26,831: DEBUG/MainProcess] | Worker: Building graph...
+[2014-11-16 18:25:26,831: DEBUG/MainProcess] | Worker: New boot order: {StateDB, Beat, Timer, Hub, Queues (intra), Pool, Autoreloader, Autoscaler, Consumer}
+[2014-11-16 18:25:26,833: DEBUG/MainProcess] | Consumer: Preparing bootsteps.
+[2014-11-16 18:25:26,833: DEBUG/MainProcess] | Consumer: Building graph...
+[2014-11-16 18:25:26,837: DEBUG/MainProcess] | Consumer: New boot order: {Connection, Events, Mingle, Gossip, Heart, Agent, Tasks, Control, event loop}
+[2014-11-16 18:25:26,839: DEBUG/MainProcess] | Worker: Starting Hub
+[2014-11-16 18:25:26,839: DEBUG/MainProcess] ^-- substep ok
+[2014-11-16 18:25:26,839: DEBUG/MainProcess] | Worker: Starting Pool
+[2014-11-16 18:25:26,857: DEBUG/MainProcess] ^-- substep ok
+[2014-11-16 18:25:26,857: DEBUG/MainProcess] | Worker: Starting Consumer
+[2014-11-16 18:25:26,858: DEBUG/MainProcess] | Consumer: Starting Connection
+[2014-11-16 18:25:26,869: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 2.00 seconds...
+
+[2014-11-16 18:25:28,887: DEBUG/MainProcess] Start from server, version: 0.9, properties: {u'information': u'Licensed under the MPL.  See http://www.rabbitmq.com/', u'product': u'RabbitMQ', u'copyright': u'Copyright (C) 2007-2013 GoPivotal, Inc.', u'capabilities': {u'exchange_exchange_bindings': True, u'consumer_cancel_notify': True, u'publisher_confirms': True, u'basic.nack': True}, u'platform': u'Erlang/OTP', u'version': u'3.1.5'}, mechanisms: [u'PLAIN', u'AMQPLAIN'], locales: [u'en_US']
+[2014-11-16 18:25:28,888: DEBUG/MainProcess] Open OK!
+[2014-11-16 18:25:28,888: INFO/MainProcess] Connected to amqp://guest:**@127.0.0.1:5672//
+[2014-11-16 18:25:28,888: DEBUG/MainProcess] ^-- substep ok
+[2014-11-16 18:25:28,888: DEBUG/MainProcess] | Consumer: Starting Events
+[2014-11-16 18:25:28,896: DEBUG/MainProcess] Start from server, version: 0.9, properties: {u'information': u'Licensed under the MPL.  See http://www.rabbitmq.com/', u'product': u'RabbitMQ', u'copyright': u'Copyright (C) 2007-2013 GoPivotal, Inc.', u'capabilities': {u'exchange_exchange_bindings': True, u'consumer_cancel_notify': True, u'publisher_confirms': True, u'basic.nack': True}, u'platform': u'Erlang/OTP', u'version': u'3.1.5'}, mechanisms: [u'PLAIN', u'AMQPLAIN'], locales: [u'en_US']
+[2014-11-16 18:25:28,896: DEBUG/MainProcess] Open OK!
+[2014-11-16 18:25:28,896: DEBUG/MainProcess] using channel_id: 1
+[2014-11-16 18:25:28,897: DEBUG/MainProcess] Channel open
+[2014-11-16 18:25:28,897: DEBUG/MainProcess] ^-- substep ok
+[2014-11-16 18:25:28,897: DEBUG/MainProcess] | Consumer: Starting Mingle
+[2014-11-16 18:25:28,898: INFO/MainProcess] mingle: searching for neighbors
+[2014-11-16 18:25:28,898: DEBUG/MainProcess] using channel_id: 1
+[2014-11-16 18:25:28,898: DEBUG/MainProcess] Channel open
+[2014-11-16 18:25:29,907: INFO/MainProcess] mingle: all alone
+[2014-11-16 18:25:29,907: DEBUG/MainProcess] ^-- substep ok
+[2014-11-16 18:25:29,907: DEBUG/MainProcess] | Consumer: Starting Gossip
+[2014-11-16 18:25:29,908: DEBUG/MainProcess] using channel_id: 2
+[2014-11-16 18:25:29,909: DEBUG/MainProcess] Channel open
+[2014-11-16 18:25:29,916: DEBUG/MainProcess] ^-- substep ok
+[2014-11-16 18:25:29,916: DEBUG/MainProcess] | Consumer: Starting Heart
+[2014-11-16 18:25:29,918: DEBUG/MainProcess] ^-- substep ok
+[2014-11-16 18:25:29,919: DEBUG/MainProcess] | Consumer: Starting Tasks
+[2014-11-16 18:25:29,927: DEBUG/MainProcess] ^-- substep ok
+[2014-11-16 18:25:29,927: DEBUG/MainProcess] | Consumer: Starting Control
+[2014-11-16 18:25:29,927: DEBUG/MainProcess] using channel_id: 3
+[2014-11-16 18:25:29,927: DEBUG/MainProcess] Channel open
+[2014-11-16 18:25:29,929: WARNING/MainProcess] /usr/lib/python2.6/site-packages/kombu/pidbox.py:75: UserWarning: A node named celery@bjlinux068 is already using this process mailbox!
+
+Maybe you forgot to shutdown the other node or did not do so properly?
+Or if you meant to start multiple nodes on the same host please make sure
+you give each node a unique node name!
+
+  warnings.warn(W_PIDBOX_IN_USE.format(node=self))
+[2014-11-16 18:25:29,930: DEBUG/MainProcess] ^-- substep ok
+[2014-11-16 18:25:29,931: DEBUG/MainProcess] | Consumer: Starting event loop
+[2014-11-16 18:25:29,932: WARNING/MainProcess] celery@bjlinux068 ready.
+[2014-11-16 18:25:29,932: DEBUG/MainProcess] | Worker: Hub.register Pool...
+[2014-11-16 18:25:29,933: DEBUG/MainProcess] basic.qos: prefetch_count->48
+[2014-11-16 20:27:06,027: INFO/MainProcess] Received task: tasks.add[2c409d97-0c6d-4cf1-9858-54d8c3df6a41]
+[2014-11-16 20:27:06,027: DEBUG/MainProcess] TaskPool: Apply <function _fast_trace_task at 0x2e4a0c8> (args:(u'tasks.add', u'2c409d97-0c6d-4cf1-9858-54d8c3df6a41', [9, 89], {}, {u'utc': True, u'is_eager': False, u'chord': None, u'group': None, u'args': [9, 89], u'retries': 0, u'delivery_info': {u'priority': None, u'redelivered': False, u'routing_key': u'lighting', u'exchange': u'lighting'}, u'expires': None, u'hostname': 'celery@bjlinux068', u'task': u'tasks.add', u'callbacks': None, u'correlation_id': u'2c409d97-0c6d-4cf1-9858-54d8c3df6a41', u'errbacks': None, u'timelimit': [None, None], u'taskset': None, u'kwargs': {}, u'eta': None, u'reply_to': u'e1f439c5-02a5-387b-b23c-00da9f2b9a13', u'id': u'2c409d97-0c6d-4cf1-9858-54d8c3df6a41', u'headers': {}}) kwargs:{})
+[2014-11-16 20:27:06,028: DEBUG/MainProcess] Task accepted: tasks.add[2c409d97-0c6d-4cf1-9858-54d8c3df6a41] pid:13869
+[2014-11-16 20:27:06,028: INFO/Worker-5] Calling task add(9, 89)
+[2014-11-16 20:27:06,037: DEBUG/Worker-5] Start from server, version: 0.9, properties: {u'information': u'Licensed under the MPL.  See http://www.rabbitmq.com/', u'product': u'RabbitMQ', u'copyright': u'Copyright (C) 2007-2013 GoPivotal, Inc.', u'capabilities': {u'exchange_exchange_bindings': True, u'consumer_cancel_notify': True, u'publisher_confirms': True, u'basic.nack': True}, u'platform': u'Erlang/OTP', u'version': u'3.1.5'}, mechanisms: [u'PLAIN', u'AMQPLAIN'], locales: [u'en_US']
+[2014-11-16 20:27:06,038: DEBUG/Worker-5] Open OK!
+[2014-11-16 20:27:06,038: DEBUG/Worker-5] using channel_id: 1
+[2014-11-16 20:27:06,039: DEBUG/Worker-5] Channel open
+[2014-11-16 20:27:06,123: INFO/MainProcess] Task tasks.add[2c409d97-0c6d-4cf1-9858-54d8c3df6a41] succeeded in 0.0945645808242s: 98
+[2014-11-16 20:33:34,571: INFO/MainProcess] Received task: tasks.add[aa1897cc-328c-4497-b010-550cbc716c9d]
+[2014-11-16 20:33:34,572: DEBUG/MainProcess] TaskPool: Apply <function _fast_trace_task at 0x2e4a0c8> (args:(u'tasks.add', u'aa1897cc-328c-4497-b010-550cbc716c9d', [9, 89], {}, {u'utc': True, u'is_eager': False, u'chord': None, u'group': None, u'args': [9, 89], u'retries': 0, u'delivery_info': {u'priority': None, u'redelivered': False, u'routing_key': u'lighting', u'exchange': u'lighting'}, u'expires': None, u'hostname': 'celery@bjlinux068', u'task': u'tasks.add', u'callbacks': None, u'correlation_id': u'aa1897cc-328c-4497-b010-550cbc716c9d', u'errbacks': None, u'timelimit': [None, None], u'taskset': None, u'kwargs': {}, u'eta': None, u'reply_to': u'e1f439c5-02a5-387b-b23c-00da9f2b9a13', u'id': u'aa1897cc-328c-4497-b010-550cbc716c9d', u'headers': {}}) kwargs:{})
+[2014-11-16 20:33:34,574: DEBUG/MainProcess] Task accepted: tasks.add[aa1897cc-328c-4497-b010-550cbc716c9d] pid:13865
+[2014-11-16 20:33:34,574: INFO/Worker-1] Calling task add(9, 89)
+[2014-11-16 20:33:34,595: DEBUG/Worker-1] Start from server, version: 0.9, properties: {u'information': u'Licensed under the MPL.  See http://www.rabbitmq.com/', u'product': u'RabbitMQ', u'copyright': u'Copyright (C) 2007-2013 GoPivotal, Inc.', u'capabilities': {u'exchange_exchange_bindings': True, u'consumer_cancel_notify': True, u'publisher_confirms': True, u'basic.nack': True}, u'platform': u'Erlang/OTP', u'version': u'3.1.5'}, mechanisms: [u'PLAIN', u'AMQPLAIN'], locales: [u'en_US']
+[2014-11-16 20:33:34,595: DEBUG/Worker-1] Open OK!
+[2014-11-16 20:33:34,596: DEBUG/Worker-1] using channel_id: 1
+[2014-11-16 20:33:34,597: DEBUG/Worker-1] Channel open
+[2014-11-16 20:33:34,676: INFO/MainProcess] Task tasks.add[aa1897cc-328c-4497-b010-550cbc716c9d] succeeded in 0.102501291083s: 98
+[2014-11-16 20:33:38,291: INFO/MainProcess] Received task: tasks.add[d249e71c-0b2d-4a18-8df3-212a68c5d893]
+[2014-11-16 20:33:38,291: DEBUG/MainProcess] TaskPool: Apply <function _fast_trace_task at 0x2e4a0c8> (args:(u'tasks.add', u'd249e71c-0b2d-4a18-8df3-212a68c5d893', [9, 89], {}, {u'utc': True, u'is_eager': False, u'chord': None, u'group': None, u'args': [9, 89], u'retries': 0, u'delivery_info': {u'priority': None, u'redelivered': False, u'routing_key': u'lighting', u'exchange': u'lighting'}, u'expires': None, u'hostname': 'celery@bjlinux068', u'task': u'tasks.add', u'callbacks': None, u'correlation_id': u'd249e71c-0b2d-4a18-8df3-212a68c5d893', u'errbacks': None, u'timelimit': [None, None], u'taskset': None, u'kwargs': {}, u'eta': None, u'reply_to': u'e1f439c5-02a5-387b-b23c-00da9f2b9a13', u'id': u'd249e71c-0b2d-4a18-8df3-212a68c5d893', u'headers': {}}) kwargs:{})
+[2014-11-16 20:33:38,293: DEBUG/MainProcess] Task accepted: tasks.add[d249e71c-0b2d-4a18-8df3-212a68c5d893] pid:13879
+[2014-11-16 20:33:38,293: INFO/Worker-10] Calling task add(9, 89)
+[2014-11-16 20:33:38,307: DEBUG/Worker-10] Start from server, version: 0.9, properties: {u'information': u'Licensed under the MPL.  See http://www.rabbitmq.com/', u'product': u'RabbitMQ', u'copyright': u'Copyright (C) 2007-2013 GoPivotal, Inc.', u'capabilities': {u'exchange_exchange_bindings': True, u'consumer_cancel_notify': True, u'publisher_confirms': True, u'basic.nack': True}, u'platform': u'Erlang/OTP', u'version': u'3.1.5'}, mechanisms: [u'PLAIN', u'AMQPLAIN'], locales: [u'en_US']
+[2014-11-16 20:33:38,308: DEBUG/Worker-10] Open OK!
+[2014-11-16 20:33:38,308: DEBUG/Worker-10] using channel_id: 1
+[2014-11-16 20:33:38,309: DEBUG/Worker-10] Channel open
+[2014-11-16 20:33:38,397: INFO/MainProcess] Task tasks.add[d249e71c-0b2d-4a18-8df3-212a68c5d893] succeeded in 0.10439861496s: 98
+[2014-11-16 20:34:51,140: DEBUG/MainProcess] pidbox received method dump_schedule(safe=False) [reply_to:{u'routing_key': u'dec4316b-bd05-30f6-be2c-c489507b1405', u'exchange': u'reply.celery.pidbox'} ticket:3e4a257f-e215-4d69-9d5e-698f0b6fc488]
+[2014-11-16 20:35:30,851: DEBUG/MainProcess] pidbox received method dump_tasks(taskinfoitems=[]) [reply_to:{u'routing_key': u'13cf34ef-be34-3a13-a1af-a59ea3e2de59', u'exchange': u'reply.celery.pidbox'} ticket:1d9060d3-8e1e-4ac4-9d51-989c3262ca1e]
+[2014-11-16 20:38:30,482: DEBUG/MainProcess] pidbox received method heartbeat() [reply_to:None ticket:None]
+[2014-11-16 20:38:30,482: DEBUG/MainProcess] Heartbeat requested by remote.
+[2014-11-16 20:38:33,522: DEBUG/MainProcess] pidbox received method dump_active(safe=False) [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:5994026a-ac46-4cf3-ba98-914895dae19f]
+[2014-11-16 20:38:35,548: DEBUG/MainProcess] pidbox received method dump_revoked() [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:f79882f8-69f3-4d76-8269-4624fbdee395]
+[2014-11-16 20:38:38,590: DEBUG/MainProcess] pidbox received method dump_conf(with_defaults=False) [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:2fd67c93-eb69-4618-bdfb-c2bbdd6a1fe6]
+[2014-11-16 20:38:40,622: DEBUG/MainProcess] pidbox received method dump_tasks(taskinfoitems=[]) [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:31245c5d-7ba2-4523-8ff8-6a817cf2f2f1]
+[2014-11-16 20:38:43,654: DEBUG/MainProcess] pidbox received method dump_reserved(safe=False) [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:e3529cbd-c85f-4764-923b-4118696f795d]
+[2014-11-16 20:38:45,682: DEBUG/MainProcess] pidbox received method ping() [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:b3f7f748-38cf-44a9-ba37-33a6729b2f91]
+[2014-11-16 20:38:48,724: DEBUG/MainProcess] pidbox received method stats() [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:534cdaf0-9d91-48e5-a07e-3cadbf7fc6de]
+[2014-11-16 20:38:50,755: DEBUG/MainProcess] pidbox received method dump_schedule(safe=False) [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:58ff80a0-ff43-47a4-ad43-c29413d5a052]
+[2014-11-16 20:38:53,792: DEBUG/MainProcess] pidbox received method dump_revoked() [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:46fa4030-c87e-4520-89dd-bb74914f066c]
+[2014-11-16 20:38:55,817: DEBUG/MainProcess] pidbox received method active_queues() [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:06c1ef6f-64ec-4a47-ba6b-4a843cf78f8b]
+[2014-11-16 20:38:58,865: DEBUG/MainProcess] pidbox received method dump_tasks(taskinfoitems=[]) [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:6df4b8a5-8146-45de-9e37-93c1227287a2]
+[2014-11-16 20:39:00,888: DEBUG/MainProcess] pidbox received method dump_active(safe=False) [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:a4b65255-92e4-4dd0-854f-d9801baafb77]
+[2014-11-16 20:39:03,926: DEBUG/MainProcess] pidbox received method ping() [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:7b17652f-f766-4ea3-8736-0a745c4f40f9]
+[2014-11-16 20:39:05,957: DEBUG/MainProcess] pidbox received method dump_conf(with_defaults=False) [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:ce5fc9f1-0698-4c45-8d51-d418905a9131]
+[2014-11-16 20:39:08,982: DEBUG/MainProcess] pidbox received method dump_schedule(safe=False) [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:0aad8d1d-8801-44f0-a55c-bd4050f6e1dd]
+[2014-11-16 20:39:10,994: DEBUG/MainProcess] pidbox received method dump_reserved(safe=False) [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:d54d186a-b921-4952-8e40-2dd06de12a62]
+[2014-11-16 20:39:14,012: DEBUG/MainProcess] pidbox received method active_queues() [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:4125089b-cdec-4ebf-b4ea-1e6062a7c30f]
+[2014-11-16 20:39:16,031: DEBUG/MainProcess] pidbox received method stats() [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:d685a659-293f-477d-a710-c3fcdc0cfcc2]
+[2014-11-16 20:39:19,055: DEBUG/MainProcess] pidbox received method dump_active(safe=False) [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:54d41418-316f-4b07-9259-80be188f6546]
+[2014-11-16 20:39:21,067: DEBUG/MainProcess] pidbox received method dump_revoked() [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:a9c9cd5c-118b-4a59-8bca-2957a0db115b]
+[2014-11-16 20:39:24,097: DEBUG/MainProcess] pidbox received method dump_conf(with_defaults=False) [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:3fdbc1b0-1877-46c2-955c-6d7519575206]
+[2014-11-16 20:39:26,124: DEBUG/MainProcess] pidbox received method dump_tasks(taskinfoitems=[]) [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:d004d710-eb4e-4b50-9b5b-88dab1158d24]
+[2014-11-16 20:39:29,152: DEBUG/MainProcess] pidbox received method dump_reserved(safe=False) [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:2afa056f-6511-4f65-9622-a8bc382d8ef7]
+[2014-11-16 20:39:31,175: DEBUG/MainProcess] pidbox received method ping() [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:d4a75a1b-16a5-455b-bc7e-0104f7f12bde]
+[2014-11-16 20:39:34,211: DEBUG/MainProcess] pidbox received method stats() [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:45b8eda1-fe4c-424b-a3da-8ae07eeac1b3]
+[2014-11-16 20:39:36,239: DEBUG/MainProcess] pidbox received method dump_schedule(safe=False) [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:87565fab-144d-4d40-9b29-01e07a652cb1]
+[2014-11-16 20:39:39,269: DEBUG/MainProcess] pidbox received method dump_revoked() [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:29cebe82-3c5f-41d1-8bd9-a957ed9e161d]
+[2014-11-16 20:39:41,293: DEBUG/MainProcess] pidbox received method active_queues() [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:3a8e051d-a63e-44a2-935d-6e5d7912d113]
+[2014-11-16 20:39:44,335: DEBUG/MainProcess] pidbox received method dump_tasks(taskinfoitems=[]) [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:dacbf43c-4ebd-47e7-8b6d-1cd864a8cd73]
+[2014-11-16 20:39:46,352: DEBUG/MainProcess] pidbox received method dump_active(safe=False) [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:6523d419-6ea8-4ddc-9fdb-2ad7dfa35c3a]
+[2014-11-16 20:39:49,389: DEBUG/MainProcess] pidbox received method ping() [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:385eeedd-9830-48eb-b8bd-3c019702b67d]
+[2014-11-16 20:39:51,411: DEBUG/MainProcess] pidbox received method dump_conf(with_defaults=False) [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:5385544d-05d3-4c8f-95c1-afdbb453db0f]
+[2014-11-16 20:39:54,448: DEBUG/MainProcess] pidbox received method dump_schedule(safe=False) [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:05bebb38-8de7-49cc-819e-a1747d2ff1f5]
+[2014-11-16 20:39:56,469: DEBUG/MainProcess] pidbox received method dump_reserved(safe=False) [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:a260f2aa-25c6-4a92-ae81-8fe50fc0ca0f]
+[2014-11-16 20:39:59,503: DEBUG/MainProcess] pidbox received method active_queues() [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:38cf4da7-c440-4a91-80e1-ba1dde69e23f]
+[2014-11-16 20:40:01,528: DEBUG/MainProcess] pidbox received method stats() [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:f27fa0dd-e83b-428e-9d01-e307196e4cc4]
+[2014-11-16 20:40:04,571: DEBUG/MainProcess] pidbox received method dump_active(safe=False) [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:683b9b20-d91a-49dd-836c-33d32da5fe67]
+[2014-11-16 20:40:06,595: DEBUG/MainProcess] pidbox received method dump_revoked() [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:d118a36f-ac25-458d-b37d-48b8eb485b18]
+[2014-11-16 20:40:09,630: DEBUG/MainProcess] pidbox received method dump_conf(with_defaults=False) [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:aae111a1-7548-46c2-8561-8be15ef7ba2c]
+[2014-11-16 20:40:11,656: DEBUG/MainProcess] pidbox received method dump_tasks(taskinfoitems=[]) [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:58571d5d-8438-4a95-862c-fe7f9113998f]
+[2014-11-16 20:40:14,695: DEBUG/MainProcess] pidbox received method dump_reserved(safe=False) [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:d09296ad-0e6a-457f-be45-66effc423089]
+[2014-11-16 20:40:16,714: DEBUG/MainProcess] pidbox received method ping() [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:5edf03ac-b5ea-4ba6-b78e-b0b3f5562c98]
+[2014-11-16 20:40:19,750: DEBUG/MainProcess] pidbox received method stats() [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:7279619d-cad4-4b9a-83b5-314e613cc550]
+[2014-11-16 20:40:21,790: DEBUG/MainProcess] pidbox received method dump_schedule(safe=False) [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:cd7679d3-2b8f-48f5-85cc-3e2d0740d487]
+[2014-11-16 20:40:24,826: DEBUG/MainProcess] pidbox received method dump_revoked() [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:3c54acbc-0ed6-428b-aa37-b4aec11ff429]
+[2014-11-16 20:40:26,850: DEBUG/MainProcess] pidbox received method active_queues() [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:f3b01f6b-46e5-498c-8e5b-aa5023a09b0f]
+[2014-11-16 20:40:29,893: DEBUG/MainProcess] pidbox received method dump_tasks(taskinfoitems=[]) [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:01707fe0-0d56-4e82-9e59-7c48fab4314c]
+[2014-11-16 20:40:31,915: DEBUG/MainProcess] pidbox received method dump_active(safe=False) [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:0f217b2f-52ef-4778-8894-7716bbb51376]
+[2014-11-16 20:40:34,955: DEBUG/MainProcess] pidbox received method ping() [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:3d9d3ca3-5217-4f82-8a53-038958a113a4]
+[2014-11-16 20:40:36,972: DEBUG/MainProcess] pidbox received method dump_conf(with_defaults=False) [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:7ec4a8e9-3d1d-4da7-8104-94fbaa792cd8]
+[2014-11-16 20:40:39,999: DEBUG/MainProcess] pidbox received method dump_schedule(safe=False) [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:be63d6eb-7b43-4812-91e8-37e65c6eaad6]
+[2014-11-16 20:40:42,014: DEBUG/MainProcess] pidbox received method dump_reserved(safe=False) [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:2b842942-e660-4fab-b749-36f7065915b8]
+[2014-11-16 20:40:45,032: DEBUG/MainProcess] pidbox received method active_queues() [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:6120f622-3d0a-4607-9546-d3fd3a9ba369]
+[2014-11-16 20:40:47,046: DEBUG/MainProcess] pidbox received method stats() [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:ea2e44d4-e3d2-4c47-83bd-2cccec72d932]
+[2014-11-16 20:40:50,067: DEBUG/MainProcess] pidbox received method dump_active(safe=False) [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:b75c50c5-1106-4101-8278-835c4f0a8cfe]
+[2014-11-16 20:40:52,083: DEBUG/MainProcess] pidbox received method dump_revoked() [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:f9677a81-d61d-4c89-9920-ac0f6dfff485]
+[2014-11-16 20:40:55,113: DEBUG/MainProcess] pidbox received method dump_conf(with_defaults=False) [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:f402c73b-9ee0-42b1-a80a-2f517cc6d93a]
+[2014-11-16 20:40:57,142: DEBUG/MainProcess] pidbox received method dump_tasks(taskinfoitems=[]) [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:889f18ae-8ecd-46e8-b76b-8e32a84e7d65]
+[2014-11-16 20:41:00,174: DEBUG/MainProcess] pidbox received method dump_reserved(safe=False) [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:3ab48a55-d901-4347-a4c0-8d83dcf8cfa2]
+[2014-11-16 20:41:02,193: DEBUG/MainProcess] pidbox received method ping() [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:589afe8c-5290-4250-9c57-ff5a6bf136e7]
+[2014-11-16 20:41:05,227: DEBUG/MainProcess] pidbox received method stats() [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:c9c8cf8e-ba70-471e-93f7-0dff2b029964]
+[2014-11-16 20:41:07,252: DEBUG/MainProcess] pidbox received method dump_schedule(safe=False) [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:403fe35b-5399-4b7c-b264-df88361ef237]
+[2014-11-16 20:41:10,794: DEBUG/MainProcess] pidbox received method dump_reserved(safe=False) [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:73096ee8-06b0-42af-9827-7e2de513f4e8]
+[2014-11-16 20:41:13,832: DEBUG/MainProcess] pidbox received method active_queues() [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:ab014322-5366-4b86-b94e-5e8f045de2cd]
+[2014-11-16 20:41:15,859: DEBUG/MainProcess] pidbox received method stats() [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:c709ff10-7e94-4e9f-882e-03f798f23b2e]
+[2014-11-16 20:41:18,905: DEBUG/MainProcess] pidbox received method dump_active(safe=False) [reply_to:{u'routing_key': u'c3588886-19d8-3c2e-8c2e-75b0fb97e725', u'exchange': u'reply.celery.pidbox'} ticket:8ba2712d-c6ae-4a84-960f-5efb82eedb6c]
+[2014-11-16 20:41:48,403: DEBUG/MainProcess] pidbox received method heartbeat() [reply_to:None ticket:None]
+[2014-11-16 20:41:48,403: DEBUG/MainProcess] Heartbeat requested by remote.
+[2014-11-16 20:41:51,444: DEBUG/MainProcess] pidbox received method dump_active(safe=False) [reply_to:{u'routing_key': u'ade2c483-111e-3e42-b776-f7d79b41ef38', u'exchange': u'reply.celery.pidbox'} ticket:a9d6f8d3-8877-4c14-a1bd-99fd7780b221]
+[2014-11-16 20:41:53,466: DEBUG/MainProcess] pidbox received method dump_revoked() [reply_to:{u'routing_key': u'ade2c483-111e-3e42-b776-f7d79b41ef38', u'exchange': u'reply.celery.pidbox'} ticket:14e6e27c-75cf-4c57-9c1d-675aa279ddf1]
+[2014-11-16 20:41:56,505: DEBUG/MainProcess] pidbox received method dump_conf(with_defaults=False) [reply_to:{u'routing_key': u'ade2c483-111e-3e42-b776-f7d79b41ef38', u'exchange': u'reply.celery.pidbox'} ticket:b579a568-d4d7-4f82-8e21-dd2f95a419e6]
+[2014-11-16 21:36:35,806: INFO/MainProcess] Received task: tasks.add[7a737dd6-3fc9-442e-9a16-015df61750d5]
+[2014-11-16 21:36:35,807: DEBUG/MainProcess] TaskPool: Apply <function _fast_trace_task at 0x2e4a0c8> (args:(u'tasks.add', u'7a737dd6-3fc9-442e-9a16-015df61750d5', [9, 89], {}, {u'utc': True, u'is_eager': False, u'chord': None, u'group': None, u'args': [9, 89], u'retries': 0, u'delivery_info': {u'priority': None, u'redelivered': False, u'routing_key': u'lighting', u'exchange': u'lighting'}, u'expires': None, u'hostname': 'celery@bjlinux068', u'task': u'tasks.add', u'callbacks': None, u'correlation_id': u'7a737dd6-3fc9-442e-9a16-015df61750d5', u'errbacks': None, u'timelimit': [None, None], u'taskset': None, u'kwargs': {}, u'eta': None, u'reply_to': u'6faac172-5cfa-39f3-886d-9df7f9f9cae3', u'id': u'7a737dd6-3fc9-442e-9a16-015df61750d5', u'headers': {}}) kwargs:{})
+[2014-11-16 21:36:35,808: DEBUG/MainProcess] Task accepted: tasks.add[7a737dd6-3fc9-442e-9a16-015df61750d5] pid:13874
+[2014-11-16 21:36:35,809: INFO/Worker-8] Calling task add(9, 89)
+[2014-11-16 21:36:35,843: DEBUG/Worker-8] Start from server, version: 0.9, properties: {u'information': u'Licensed under the MPL.  See http://www.rabbitmq.com/', u'product': u'RabbitMQ', u'copyright': u'Copyright (C) 2007-2013 GoPivotal, Inc.', u'capabilities': {u'exchange_exchange_bindings': True, u'consumer_cancel_notify': True, u'publisher_confirms': True, u'basic.nack': True}, u'platform': u'Erlang/OTP', u'version': u'3.1.5'}, mechanisms: [u'PLAIN', u'AMQPLAIN'], locales: [u'en_US']
+[2014-11-16 21:36:35,844: DEBUG/Worker-8] Open OK!
+[2014-11-16 21:36:35,844: DEBUG/Worker-8] using channel_id: 1
+[2014-11-16 21:36:35,845: DEBUG/Worker-8] Channel open
+[2014-11-16 21:36:35,897: INFO/MainProcess] Task tasks.add[7a737dd6-3fc9-442e-9a16-015df61750d5] succeeded in 0.0896233019885s: 98
+[2014-11-16 21:36:43,083: INFO/MainProcess] Received task: tasks.add[604d69c8-d86c-4a3e-ac2a-48c5e5d8e9d3]
+[2014-11-16 21:36:43,083: DEBUG/MainProcess] TaskPool: Apply <function _fast_trace_task at 0x2e4a0c8> (args:(u'tasks.add', u'604d69c8-d86c-4a3e-ac2a-48c5e5d8e9d3', [9, 89], {}, {u'utc': True, u'is_eager': False, u'chord': None, u'group': None, u'args': [9, 89], u'retries': 0, u'delivery_info': {u'priority': None, u'redelivered': False, u'routing_key': u'lighting', u'exchange': u'lighting'}, u'expires': None, u'hostname': 'celery@bjlinux068', u'task': u'tasks.add', u'callbacks': None, u'correlation_id': u'604d69c8-d86c-4a3e-ac2a-48c5e5d8e9d3', u'errbacks': None, u'timelimit': [None, None], u'taskset': None, u'kwargs': {}, u'eta': None, u'reply_to': u'6faac172-5cfa-39f3-886d-9df7f9f9cae3', u'id': u'604d69c8-d86c-4a3e-ac2a-48c5e5d8e9d3', u'headers': {}}) kwargs:{})
+[2014-11-16 21:36:43,085: DEBUG/MainProcess] Task accepted: tasks.add[604d69c8-d86c-4a3e-ac2a-48c5e5d8e9d3] pid:13872
+[2014-11-16 21:36:43,086: INFO/Worker-7] Calling task add(9, 89)
+[2014-11-16 21:36:43,104: DEBUG/Worker-7] Start from server, version: 0.9, properties: {u'information': u'Licensed under the MPL.  See http://www.rabbitmq.com/', u'product': u'RabbitMQ', u'copyright': u'Copyright (C) 2007-2013 GoPivotal, Inc.', u'capabilities': {u'exchange_exchange_bindings': True, u'consumer_cancel_notify': True, u'publisher_confirms': True, u'basic.nack': True}, u'platform': u'Erlang/OTP', u'version': u'3.1.5'}, mechanisms: [u'PLAIN', u'AMQPLAIN'], locales: [u'en_US']
+[2014-11-16 21:36:43,105: DEBUG/Worker-7] Open OK!
+[2014-11-16 21:36:43,105: DEBUG/Worker-7] using channel_id: 1
+[2014-11-16 21:36:43,106: DEBUG/Worker-7] Channel open
+[2014-11-16 21:36:43,166: INFO/MainProcess] Task tasks.add[604d69c8-d86c-4a3e-ac2a-48c5e5d8e9d3] succeeded in 0.081555478042s: 98
+[2014-11-16 21:38:57,720: INFO/MainProcess] Received task: tasks.add[83495198-9113-4712-8cb6-d9fbaa51fce1]
+[2014-11-16 21:38:57,720: DEBUG/MainProcess] TaskPool: Apply <function _fast_trace_task at 0x2e4a0c8> (args:(u'tasks.add', u'83495198-9113-4712-8cb6-d9fbaa51fce1', [9, 890], {}, {u'utc': True, u'is_eager': False, u'chord': None, u'group': None, u'args': [9, 890], u'retries': 0, u'delivery_info': {u'priority': None, u'redelivered': False, u'routing_key': u'lighting', u'exchange': u'lighting'}, u'expires': None, u'hostname': 'celery@bjlinux068', u'task': u'tasks.add', u'callbacks': None, u'correlation_id': u'83495198-9113-4712-8cb6-d9fbaa51fce1', u'errbacks': None, u'timelimit': [None, None], u'taskset': None, u'kwargs': {}, u'eta': None, u'reply_to': u'889ec37c-2712-39d9-a2bc-c6e89a8a67e3', u'id': u'83495198-9113-4712-8cb6-d9fbaa51fce1', u'headers': {}}) kwargs:{})
+[2014-11-16 21:38:57,722: DEBUG/MainProcess] Task accepted: tasks.add[83495198-9113-4712-8cb6-d9fbaa51fce1] pid:13876
+[2014-11-16 21:38:57,722: INFO/Worker-9] Calling task add(9, 890)
+[2014-11-16 21:38:57,736: DEBUG/Worker-9] Start from server, version: 0.9, properties: {u'information': u'Licensed under the MPL.  See http://www.rabbitmq.com/', u'product': u'RabbitMQ', u'copyright': u'Copyright (C) 2007-2013 GoPivotal, Inc.', u'capabilities': {u'exchange_exchange_bindings': True, u'consumer_cancel_notify': True, u'publisher_confirms': True, u'basic.nack': True}, u'platform': u'Erlang/OTP', u'version': u'3.1.5'}, mechanisms: [u'PLAIN', u'AMQPLAIN'], locales: [u'en_US']
+[2014-11-16 21:38:57,737: DEBUG/Worker-9] Open OK!
+[2014-11-16 21:38:57,737: DEBUG/Worker-9] using channel_id: 1
+[2014-11-16 21:38:57,738: DEBUG/Worker-9] Channel open
+[2014-11-16 21:38:57,821: INFO/MainProcess] Task tasks.add[83495198-9113-4712-8cb6-d9fbaa51fce1] succeeded in 0.0993937908206s: 899
+[2014-11-16 21:49:54,433: DEBUG/MainProcess] pidbox received method heartbeat() [reply_to:None ticket:None]
+[2014-11-16 21:49:54,434: DEBUG/MainProcess] Heartbeat requested by remote.
+[2014-11-16 21:49:57,470: DEBUG/MainProcess] pidbox received method dump_active(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:96d83517-4e08-4db7-ae0a-91bd23fe9136]
+[2014-11-16 21:49:59,494: DEBUG/MainProcess] pidbox received method dump_revoked() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:4e598c3d-9518-4a94-8470-c60decb000b1]
+[2014-11-16 21:50:02,531: DEBUG/MainProcess] pidbox received method dump_conf(with_defaults=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:4141d25c-0cc0-4b3f-8b2d-6ca849ae2b6a]
+[2014-11-16 21:50:04,561: DEBUG/MainProcess] pidbox received method dump_tasks(taskinfoitems=[]) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:e896e5cb-5115-4cfa-ba75-87ce514ef153]
+[2014-11-16 21:50:07,593: DEBUG/MainProcess] pidbox received method dump_reserved(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:cbcf79ed-23f2-4f00-8f39-464773f46aef]
+[2014-11-16 21:50:09,613: DEBUG/MainProcess] pidbox received method ping() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:55c1a211-8d63-4682-b01e-c748b469121b]
+[2014-11-16 21:50:12,651: DEBUG/MainProcess] pidbox received method stats() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:91378345-2d87-44fe-9b0c-833e950573a4]
+[2014-11-16 21:50:14,681: DEBUG/MainProcess] pidbox received method dump_schedule(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:280d8077-97bb-483d-ba19-9d8896985257]
+[2014-11-16 21:50:17,714: DEBUG/MainProcess] pidbox received method dump_revoked() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:21f50ef2-1285-45c1-94dc-b1f54d789194]
+[2014-11-16 21:50:19,729: DEBUG/MainProcess] pidbox received method active_queues() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:d0d0bda2-a828-4f35-a7d4-0f036dba0a72]
+[2014-11-16 21:50:22,763: DEBUG/MainProcess] pidbox received method dump_tasks(taskinfoitems=[]) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:0e795283-d610-4c6e-bcef-51b4e2575975]
+[2014-11-16 21:50:24,788: DEBUG/MainProcess] pidbox received method dump_active(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:b626ba77-6b34-4c8d-9e3a-5ad32d724682]
+[2014-11-16 21:50:27,828: DEBUG/MainProcess] pidbox received method ping() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:153c9527-2da4-4d03-9417-6af7eb9ac096]
+[2014-11-16 21:50:29,852: DEBUG/MainProcess] pidbox received method dump_conf(with_defaults=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:80a43316-8ee0-47b6-9b25-d5f21bc5ae32]
+[2014-11-16 21:50:32,897: DEBUG/MainProcess] pidbox received method dump_schedule(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:6e3d1578-216b-4919-b34e-2406d4c83cbb]
+[2014-11-16 21:50:34,925: DEBUG/MainProcess] pidbox received method dump_reserved(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:159ca0d3-f622-4212-8d82-8b7339517cc0]
+[2014-11-16 21:50:37,959: DEBUG/MainProcess] pidbox received method active_queues() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:ee1e9638-ac99-428d-ae80-cc7248493252]
+[2014-11-16 21:50:39,975: DEBUG/MainProcess] pidbox received method stats() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:1081d23d-95ea-4453-b235-1ea048f22b78]
+[2014-11-16 21:50:42,997: DEBUG/MainProcess] pidbox received method dump_active(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:674239d9-93a4-4412-854c-809617dfa783]
+[2014-11-16 21:50:45,010: DEBUG/MainProcess] pidbox received method dump_revoked() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:69261f08-a720-48e3-8767-2fe8767c8029]
+[2014-11-16 21:50:48,034: DEBUG/MainProcess] pidbox received method dump_conf(with_defaults=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:634d281a-9a8d-4610-a813-8ebcde2812ea]
+[2014-11-16 21:50:49,306: INFO/MainProcess] Received task: tasks.add[923b178b-64d2-4064-985a-300999f55956]
+[2014-11-16 21:50:49,307: DEBUG/MainProcess] TaskPool: Apply <function _fast_trace_task at 0x2e4a0c8> (args:(u'tasks.add', u'923b178b-64d2-4064-985a-300999f55956', [9, 890], {}, {u'utc': True, u'is_eager': False, u'chord': None, u'group': None, u'args': [9, 890], u'retries': 0, u'delivery_info': {u'priority': None, u'redelivered': False, u'routing_key': u'lighting', u'exchange': u'lighting'}, u'expires': None, u'hostname': 'celery@bjlinux068', u'task': u'tasks.add', u'callbacks': None, u'correlation_id': u'923b178b-64d2-4064-985a-300999f55956', u'errbacks': None, u'timelimit': [None, None], u'taskset': None, u'kwargs': {}, u'eta': None, u'reply_to': u'42cf1a40-3a91-32a7-92ee-2dd50d702817', u'id': u'923b178b-64d2-4064-985a-300999f55956', u'headers': {}}) kwargs:{})
+[2014-11-16 21:50:49,309: DEBUG/MainProcess] Task accepted: tasks.add[923b178b-64d2-4064-985a-300999f55956] pid:13866
+[2014-11-16 21:50:49,309: INFO/Worker-2] Calling task add(9, 890)
+[2014-11-16 21:50:49,325: DEBUG/Worker-2] Start from server, version: 0.9, properties: {u'information': u'Licensed under the MPL.  See http://www.rabbitmq.com/', u'product': u'RabbitMQ', u'copyright': u'Copyright (C) 2007-2013 GoPivotal, Inc.', u'capabilities': {u'exchange_exchange_bindings': True, u'consumer_cancel_notify': True, u'publisher_confirms': True, u'basic.nack': True}, u'platform': u'Erlang/OTP', u'version': u'3.1.5'}, mechanisms: [u'PLAIN', u'AMQPLAIN'], locales: [u'en_US']
+[2014-11-16 21:50:49,326: DEBUG/Worker-2] Open OK!
+[2014-11-16 21:50:49,326: DEBUG/Worker-2] using channel_id: 1
+[2014-11-16 21:50:49,327: DEBUG/Worker-2] Channel open
+[2014-11-16 21:50:49,411: INFO/MainProcess] Task tasks.add[923b178b-64d2-4064-985a-300999f55956] succeeded in 0.102759696078s: 899
+[2014-11-16 21:50:50,057: DEBUG/MainProcess] pidbox received method dump_tasks(taskinfoitems=[]) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:341a7a98-a659-4327-b455-82ef2b1cd949]
+[2014-11-16 21:50:53,087: DEBUG/MainProcess] pidbox received method dump_reserved(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:7cd37c5e-c502-425d-8578-0582e7dd7c56]
+[2014-11-16 21:50:55,109: DEBUG/MainProcess] pidbox received method ping() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:4bb0473e-41b1-4744-9496-1a9c359a0022]
+[2014-11-16 21:50:58,144: DEBUG/MainProcess] pidbox received method stats() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:16b77cd2-467f-46fd-ac27-5ef01cca13d9]
+[2014-11-16 21:51:00,174: DEBUG/MainProcess] pidbox received method dump_schedule(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:50d315f6-9ebe-46c7-86e8-275fbe79f9dd]
+[2014-11-16 21:51:03,209: DEBUG/MainProcess] pidbox received method dump_revoked() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:0c099504-5619-407d-9013-c46a738081aa]
+[2014-11-16 21:51:05,233: DEBUG/MainProcess] pidbox received method active_queues() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:19b44f42-4354-4392-aa09-eafbb0cc2b68]
+[2014-11-16 21:51:08,276: DEBUG/MainProcess] pidbox received method dump_tasks(taskinfoitems=[]) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:eafde3a9-2d42-40a3-8d05-b0f6aa497bf3]
+[2014-11-16 21:51:10,300: DEBUG/MainProcess] pidbox received method dump_active(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:1f76ee0f-cbeb-4976-9067-32cf08dd5234]
+[2014-11-16 21:51:13,334: DEBUG/MainProcess] pidbox received method ping() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:b9f1be48-75d0-406b-874f-2b74ee173d32]
+[2014-11-16 21:51:15,357: DEBUG/MainProcess] pidbox received method dump_conf(with_defaults=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:afe57715-31bd-45b4-a564-6ab5a892c7f9]
+[2014-11-16 21:51:18,392: DEBUG/MainProcess] pidbox received method dump_schedule(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:a1284d76-de23-48f3-b8ab-048b782021b9]
+[2014-11-16 21:51:20,415: DEBUG/MainProcess] pidbox received method dump_reserved(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:18d1a23a-44e9-4223-8fd3-f71f00f8ff87]
+[2014-11-16 21:51:23,450: DEBUG/MainProcess] pidbox received method active_queues() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:bd57fb05-1c44-44c0-8062-4754e971351c]
+[2014-11-16 21:51:25,479: DEBUG/MainProcess] pidbox received method stats() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:d559896a-378e-4697-8d57-d9b245458a51]
+[2014-11-16 21:51:28,522: DEBUG/MainProcess] pidbox received method dump_active(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:125c20a3-7e80-4067-b046-a321b95905d9]
+[2014-11-16 21:51:30,547: DEBUG/MainProcess] pidbox received method dump_revoked() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:081d3170-5ed9-45b6-b036-2729ae5aed0d]
+[2014-11-16 21:51:33,583: DEBUG/MainProcess] pidbox received method dump_conf(with_defaults=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:43da9cd6-7da0-4193-99a2-aedd2078bbb2]
+[2014-11-16 21:51:35,615: DEBUG/MainProcess] pidbox received method dump_tasks(taskinfoitems=[]) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:aa1268a9-f1f3-41f7-83b3-7bcc1296f775]
+[2014-11-16 21:51:38,652: DEBUG/MainProcess] pidbox received method dump_reserved(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:1154baf6-482d-492e-b38b-e73a6eb9921e]
+[2014-11-16 21:51:40,678: DEBUG/MainProcess] pidbox received method ping() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:a6378129-db64-4a98-b132-5ff39ea302ec]
+[2014-11-16 21:51:43,719: DEBUG/MainProcess] pidbox received method stats() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:a5132880-7dc5-46a7-9642-6f0781810220]
+[2014-11-16 21:51:45,749: DEBUG/MainProcess] pidbox received method dump_schedule(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:588f95e7-2591-40a4-8bbf-aaff22cc45a5]
+[2014-11-16 21:51:48,787: DEBUG/MainProcess] pidbox received method dump_revoked() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:ed8c4b5f-db94-4627-8096-0a113a82e29a]
+[2014-11-16 21:51:50,813: DEBUG/MainProcess] pidbox received method active_queues() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:3861c34f-0795-407e-a48b-fb1c56aae2c6]
+[2014-11-16 21:51:53,858: DEBUG/MainProcess] pidbox received method dump_tasks(taskinfoitems=[]) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:4a86ec98-5705-4966-967d-e0efb0764bc6]
+[2014-11-16 21:51:55,881: DEBUG/MainProcess] pidbox received method dump_active(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:04fa6cff-a5bb-494c-8046-6a845a7c3a2b]
+[2014-11-16 21:51:58,919: DEBUG/MainProcess] pidbox received method ping() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:c1a7cf32-a72e-420d-9479-5be9b7a6c0cb]
+[2014-11-16 21:52:00,953: DEBUG/MainProcess] pidbox received method dump_conf(with_defaults=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:e8e92505-b052-496e-888a-966f3c69652d]
+[2014-11-16 21:52:03,978: DEBUG/MainProcess] pidbox received method dump_schedule(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:1f215085-9063-448d-8b16-d3fcc3ae95f7]
+[2014-11-16 21:52:05,991: DEBUG/MainProcess] pidbox received method dump_reserved(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:1d7d6565-1c7c-4b10-8c9a-29663714fefe]
+[2014-11-16 21:52:09,014: DEBUG/MainProcess] pidbox received method active_queues() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:34967ee6-76e4-46b5-9552-78b4a3baeca5]
+[2014-11-16 21:52:11,034: DEBUG/MainProcess] pidbox received method stats() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:1df85cc2-a378-4e7c-8a19-bd7082643018]
+[2014-11-16 21:52:14,061: DEBUG/MainProcess] pidbox received method dump_active(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:d9b93ff7-3c7a-4257-852e-ba3c21494146]
+[2014-11-16 21:52:16,077: DEBUG/MainProcess] pidbox received method dump_revoked() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:d3747e87-4e12-484d-9cd3-0e6b278f81f1]
+[2014-11-16 21:52:19,107: DEBUG/MainProcess] pidbox received method dump_conf(with_defaults=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:9442a441-3eeb-44d2-a177-9d8ae4e7462a]
+[2014-11-16 21:52:21,138: DEBUG/MainProcess] pidbox received method dump_tasks(taskinfoitems=[]) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:f69c0925-f6e9-4a04-bf02-47a032df0d71]
+[2014-11-16 21:52:24,174: DEBUG/MainProcess] pidbox received method dump_reserved(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:4450714c-d16d-47aa-a61f-9694fbe970d8]
+[2014-11-16 21:52:26,198: DEBUG/MainProcess] pidbox received method ping() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:80def803-551b-4dd2-b565-cc49db5fa1f0]
+[2014-11-16 21:52:29,232: DEBUG/MainProcess] pidbox received method stats() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:8b7e5ea3-ca5a-4fcf-9fc9-e583c806e4ab]
+[2014-11-16 21:52:31,261: DEBUG/MainProcess] pidbox received method dump_schedule(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:5a20916a-2cda-4db4-8307-02ff6df88c51]
+[2014-11-16 21:52:34,294: DEBUG/MainProcess] pidbox received method dump_revoked() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:1a602380-4f2b-4521-9e50-892278a06649]
+[2014-11-16 21:52:36,317: DEBUG/MainProcess] pidbox received method active_queues() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:59d8e9ce-573f-4b8d-889b-c06e7597dabf]
+[2014-11-16 21:52:39,363: DEBUG/MainProcess] pidbox received method dump_tasks(taskinfoitems=[]) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:663e1185-a71e-45c3-b2fa-1b5e5bf916dd]
+[2014-11-16 21:52:41,383: DEBUG/MainProcess] pidbox received method dump_active(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:388a500f-e56e-47cf-8cce-398a05c21162]
+[2014-11-16 21:52:44,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 21:52:44,395: INFO/MainProcess] Events of group {task} enabled by remote.
+[2014-11-16 21:52:46,449: DEBUG/MainProcess] pidbox received method dump_conf(with_defaults=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:f5ae18e6-296d-404a-95f2-9de2886320d8]
+[2014-11-16 21:52:49,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 21:52:51,515: DEBUG/MainProcess] pidbox received method dump_reserved(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:5fa2d127-72ea-471c-acd7-25f178a99383]
+[2014-11-16 21:52:54,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 21:52:56,584: DEBUG/MainProcess] pidbox received method stats() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:4200144e-bec6-4495-b210-e342af34aba3]
+[2014-11-16 21:52:59,396: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 21:53:01,649: DEBUG/MainProcess] pidbox received method dump_revoked() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:202dd731-3ff4-4be8-9183-b06a8cc848f1]
+[2014-11-16 21:53:04,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 21:53:06,727: DEBUG/MainProcess] pidbox received method dump_tasks(taskinfoitems=[]) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:efe74cd4-c3ef-4052-aa13-e797cd279c66]
+[2014-11-16 21:53:08,616: INFO/MainProcess] Received task: tasks.add[b368ffe0-6b3f-44ef-9ca5-6d62f014f87c]
+[2014-11-16 21:53:08,617: DEBUG/MainProcess] TaskPool: Apply <function _fast_trace_task at 0x2e4a0c8> (args:(u'tasks.add', u'b368ffe0-6b3f-44ef-9ca5-6d62f014f87c', [9, 890], {}, {u'utc': True, u'is_eager': False, u'chord': None, u'group': None, u'args': [9, 890], u'retries': 0, u'delivery_info': {u'priority': None, u'redelivered': False, u'routing_key': u'lighting', u'exchange': u'lighting'}, u'expires': None, u'hostname': 'celery@bjlinux068', u'task': u'tasks.add', u'callbacks': None, u'correlation_id': u'b368ffe0-6b3f-44ef-9ca5-6d62f014f87c', u'errbacks': None, u'timelimit': [None, None], u'taskset': None, u'kwargs': {}, u'eta': None, u'reply_to': u'c06e6429-cc31-363b-9a89-e74d3e1eb229', u'id': u'b368ffe0-6b3f-44ef-9ca5-6d62f014f87c', u'headers': {}}) kwargs:{})
+[2014-11-16 21:53:08,619: INFO/Worker-3] Calling task add(9, 890)
+[2014-11-16 21:53:08,620: DEBUG/MainProcess] Task accepted: tasks.add[b368ffe0-6b3f-44ef-9ca5-6d62f014f87c] pid:13867
+[2014-11-16 21:53:08,635: DEBUG/Worker-3] Start from server, version: 0.9, properties: {u'information': u'Licensed under the MPL.  See http://www.rabbitmq.com/', u'product': u'RabbitMQ', u'copyright': u'Copyright (C) 2007-2013 GoPivotal, Inc.', u'capabilities': {u'exchange_exchange_bindings': True, u'consumer_cancel_notify': True, u'publisher_confirms': True, u'basic.nack': True}, u'platform': u'Erlang/OTP', u'version': u'3.1.5'}, mechanisms: [u'PLAIN', u'AMQPLAIN'], locales: [u'en_US']
+[2014-11-16 21:53:08,636: DEBUG/Worker-3] Open OK!
+[2014-11-16 21:53:08,636: DEBUG/Worker-3] using channel_id: 1
+[2014-11-16 21:53:08,637: DEBUG/Worker-3] Channel open
+[2014-11-16 21:53:08,718: INFO/MainProcess] Task tasks.add[b368ffe0-6b3f-44ef-9ca5-6d62f014f87c] succeeded in 0.0990958160255s: 899
+[2014-11-16 21:53:09,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 21:53:11,792: DEBUG/MainProcess] pidbox received method ping() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:5abb9efd-c4d9-46a7-800a-bc9f5f0ff0b8]
+[2014-11-16 21:53:14,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 21:53:16,865: DEBUG/MainProcess] pidbox received method dump_schedule(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:a407f3a5-7e8c-4cf2-be27-bd17718d900a]
+[2014-11-16 21:53:19,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 21:53:21,922: DEBUG/MainProcess] pidbox received method active_queues() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:3fa70274-9a0b-480e-8476-24484359c05c]
+[2014-11-16 21:53:24,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 21:53:26,975: DEBUG/MainProcess] pidbox received method dump_active(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:a7bd9f31-6e92-434f-8035-d01a258e70ff]
+[2014-11-16 21:53:29,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 21:53:32,009: DEBUG/MainProcess] pidbox received method dump_conf(with_defaults=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:3476b20f-02a6-4297-9da8-0bc808c2c142]
+[2014-11-16 21:53:34,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 21:53:37,051: DEBUG/MainProcess] pidbox received method dump_reserved(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:e844c4df-c6d9-4694-8740-717cffe57522]
+[2014-11-16 21:53:39,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 21:53:42,098: DEBUG/MainProcess] pidbox received method stats() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:fbda721c-f00f-4783-9e36-27583f8bfab0]
+[2014-11-16 21:53:44,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 21:53:47,165: DEBUG/MainProcess] pidbox received method dump_revoked() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:b19a90e1-2245-4fa6-9c63-01bfc5e1d2bd]
+[2014-11-16 21:53:49,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 21:53:52,229: DEBUG/MainProcess] pidbox received method dump_tasks(taskinfoitems=[]) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:a4f44aa2-c24e-4f1d-8920-e3670a0f25f8]
+[2014-11-16 21:53:54,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 21:53:57,290: DEBUG/MainProcess] pidbox received method ping() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:c8cfef5d-fded-41a2-93b7-cd670833829a]
+[2014-11-16 21:53:59,394: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 21:54:02,357: DEBUG/MainProcess] pidbox received method dump_schedule(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:58190d3c-22f6-4067-85bf-4b6e1aea9264]
+[2014-11-16 21:54:04,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 21:54:07,410: DEBUG/MainProcess] pidbox received method active_queues() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:4438cfdd-b357-4a0c-aeaf-2aa11732f9a3]
+[2014-11-16 21:54:09,435: DEBUG/MainProcess] pidbox received method stats() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:00b4ef8d-8cec-434f-b104-a46e8711458b]
+[2014-11-16 21:54:12,473: DEBUG/MainProcess] pidbox received method dump_active(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:f04c02f1-7682-48fc-932a-dedcc8e5e039]
+[2014-11-16 21:54:14,496: DEBUG/MainProcess] pidbox received method dump_revoked() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:45f6300d-af77-454a-ba52-a3c51df451f7]
+[2014-11-16 21:54:17,534: DEBUG/MainProcess] pidbox received method dump_conf(with_defaults=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:238bd301-36cf-4270-8e40-8ca41603e051]
+[2014-11-16 21:54:19,561: DEBUG/MainProcess] pidbox received method dump_tasks(taskinfoitems=[]) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:852ada11-41a0-44c8-bc79-70cdb27a0d91]
+[2014-11-16 21:54:22,594: DEBUG/MainProcess] pidbox received method dump_reserved(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:25cc1420-1486-444d-8ccf-fe667d4188b7]
+[2014-11-16 21:54:24,616: DEBUG/MainProcess] pidbox received method ping() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:9c8d60c5-7fcb-41be-b7b3-d89e5c1c1faf]
+[2014-11-16 21:54:27,658: DEBUG/MainProcess] pidbox received method stats() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:e83a6086-97fb-4dab-a27f-b1adefa6adb0]
+[2014-11-16 21:54:29,688: DEBUG/MainProcess] pidbox received method dump_schedule(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:b37630fd-4f29-4911-9c33-3d1d292edcc8]
+[2014-11-16 21:54:32,725: DEBUG/MainProcess] pidbox received method dump_revoked() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:9ca987ea-85f2-4132-bdf0-ef3e05d885f0]
+[2014-11-16 21:54:34,751: DEBUG/MainProcess] pidbox received method active_queues() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:05423d0c-93d5-4ecc-9ecc-8d475341530e]
+[2014-11-16 21:54:37,797: DEBUG/MainProcess] pidbox received method dump_tasks(taskinfoitems=[]) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:6e7a137e-f2ac-49b2-9d38-43c58929d331]
+[2014-11-16 21:54:39,821: DEBUG/MainProcess] pidbox received method dump_active(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:407e16b7-2933-4d3d-93aa-b3732279defb]
+[2014-11-16 21:54:42,858: DEBUG/MainProcess] pidbox received method ping() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:db9d4fbf-a053-4f09-8794-bc8b5f817062]
+[2014-11-16 21:54:44,886: DEBUG/MainProcess] pidbox received method dump_conf(with_defaults=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:e55b6992-4337-44d4-b7d1-301df07f49f8]
+[2014-11-16 21:54:47,931: DEBUG/MainProcess] pidbox received method dump_schedule(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:19067da6-00f3-4a95-bd75-d0d81e7c63ff]
+[2014-11-16 21:54:49,954: DEBUG/MainProcess] pidbox received method dump_reserved(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:3568e72f-017c-405b-a229-c700ec0910f0]
+[2014-11-16 21:54:52,975: DEBUG/MainProcess] pidbox received method active_queues() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:166af2df-fc98-4728-a55d-d0a8b4050b1f]
+[2014-11-16 21:54:54,995: DEBUG/MainProcess] pidbox received method stats() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:b78c14a8-c42d-41f6-9b3d-2d1db00cf53f]
+[2014-11-16 21:54:58,020: DEBUG/MainProcess] pidbox received method dump_active(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:9e983755-3295-4e1e-b9c1-c29334cc3117]
+[2014-11-16 21:55:00,033: DEBUG/MainProcess] pidbox received method dump_revoked() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:3ac991f9-2eab-4470-b2ed-44ee99424dec]
+[2014-11-16 21:55:03,055: DEBUG/MainProcess] pidbox received method dump_conf(with_defaults=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:06657fd8-2f07-43a1-9d5b-d41e404858b1]
+[2014-11-16 21:55:05,085: DEBUG/MainProcess] pidbox received method dump_tasks(taskinfoitems=[]) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:00cfb686-b5eb-4b37-97d6-0c1788dd8ea6]
+[2014-11-16 21:55:08,120: DEBUG/MainProcess] pidbox received method dump_reserved(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:3ad2b6ce-21b9-4aba-94e7-1227dd16e437]
+[2014-11-16 21:55:10,147: DEBUG/MainProcess] pidbox received method ping() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:4726b855-232b-4034-834b-6674ba4d75e7]
+[2014-11-16 21:55:13,181: DEBUG/MainProcess] pidbox received method stats() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:5c13f5c8-2109-4f5e-b151-b2993ff60016]
+[2014-11-16 21:55:15,208: DEBUG/MainProcess] pidbox received method dump_schedule(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:01e9b296-4878-40c5-9ae8-d552a3b99a2f]
+[2014-11-16 21:55:18,244: DEBUG/MainProcess] pidbox received method dump_revoked() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:b112c488-f6a3-43b9-8a95-446a5330518a]
+[2014-11-16 21:55:20,267: DEBUG/MainProcess] pidbox received method active_queues() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:abdf3f2e-9860-4291-ab69-156ece4b62ee]
+[2014-11-16 21:55:23,311: DEBUG/MainProcess] pidbox received method dump_tasks(taskinfoitems=[]) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:b0211d39-6563-40ef-9f5b-b4aba344deb5]
+[2014-11-16 21:55:25,335: DEBUG/MainProcess] pidbox received method dump_active(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:d3f9794b-aa6a-4740-927b-b055a869ab03]
+[2014-11-16 21:55:28,371: DEBUG/MainProcess] pidbox received method ping() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:a27752e2-0f73-4c1b-9406-8065748791cf]
+[2014-11-16 21:55:30,396: DEBUG/MainProcess] pidbox received method dump_conf(with_defaults=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:caeadd1c-9e8a-42b4-9559-f17a78a420c4]
+[2014-11-16 21:55:33,439: DEBUG/MainProcess] pidbox received method dump_schedule(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:5c4314ff-af40-493f-8a8b-e6ae9ade7ad8]
+[2014-11-16 21:55:35,458: DEBUG/MainProcess] pidbox received method dump_reserved(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:c7a3b2a3-5769-4f56-a6f7-ea8ea148c147]
+[2014-11-16 21:55:38,488: DEBUG/MainProcess] pidbox received method active_queues() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:732e12e4-95d8-4983-8e53-7221ea7097bb]
+[2014-11-16 21:55:40,516: DEBUG/MainProcess] pidbox received method stats() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:2ee919a7-fb15-41be-9fba-983c3a6dc1a6]
+[2014-11-16 21:55:43,560: DEBUG/MainProcess] pidbox received method dump_active(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:e9d39a71-5541-483d-84c2-52bb759027c0]
+[2014-11-16 21:55:45,582: DEBUG/MainProcess] pidbox received method dump_revoked() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:1c8ba04f-bd8d-467c-b4a9-d6df2d65fdcc]
+[2014-11-16 21:55:48,621: DEBUG/MainProcess] pidbox received method dump_conf(with_defaults=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:7402e93c-da84-49d8-96e4-2d50a74150df]
+[2014-11-16 21:55:50,652: DEBUG/MainProcess] pidbox received method dump_tasks(taskinfoitems=[]) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:60bffb12-5924-4847-84bb-acf60c6177c7]
+[2014-11-16 21:55:53,691: DEBUG/MainProcess] pidbox received method dump_reserved(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:129ba017-0208-4604-ac9e-98f38e5d2bd6]
+[2014-11-16 21:55:55,714: DEBUG/MainProcess] pidbox received method ping() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:ff5f47be-8856-4648-9dd3-391bb7b5c895]
+[2014-11-16 21:55:58,756: DEBUG/MainProcess] pidbox received method stats() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:49ad935c-ecd5-4fdd-8c54-821a8fea52f2]
+[2014-11-16 21:56:00,786: DEBUG/MainProcess] pidbox received method dump_schedule(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:cfd68e23-dc84-4d0d-b38c-7420eaa2bee2]
+[2014-11-16 21:56:03,825: DEBUG/MainProcess] pidbox received method dump_revoked() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:a09571e9-9004-481c-8e10-c08bd6faf834]
+[2014-11-16 21:56:05,851: DEBUG/MainProcess] pidbox received method active_queues() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:5a9f65b4-2eef-47af-a46c-824d960451e5]
+[2014-11-16 21:56:08,901: DEBUG/MainProcess] pidbox received method dump_tasks(taskinfoitems=[]) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:c236f3df-97e4-44ad-98fa-73b2114bbcfa]
+[2014-11-16 21:56:10,924: DEBUG/MainProcess] pidbox received method dump_active(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:ed2d33b3-53a9-47e3-8eee-e26f185cefec]
+[2014-11-16 21:56:13,957: DEBUG/MainProcess] pidbox received method ping() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:f4e8e3df-b23b-4b9b-883b-27ee8e4fbf34]
+[2014-11-16 21:56:15,972: DEBUG/MainProcess] pidbox received method dump_conf(with_defaults=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:4af98588-b22b-4133-a2cd-341858c3d19e]
+[2014-11-16 21:56:18,999: DEBUG/MainProcess] pidbox received method dump_schedule(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:610cb78b-b968-4873-9a56-3efdc41182ad]
+[2014-11-16 21:56:21,011: DEBUG/MainProcess] pidbox received method dump_reserved(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:f2bcd4d7-0a15-4ef1-9fc0-ea01d61a4ad5]
+[2014-11-16 21:56:24,033: DEBUG/MainProcess] pidbox received method active_queues() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:5cf1c19a-c072-4c8f-8346-ec4d7f44a5ce]
+[2014-11-16 21:56:26,051: DEBUG/MainProcess] pidbox received method stats() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:2341cf87-9bbd-4e78-82bd-81d5fec2c412]
+[2014-11-16 21:56:29,088: DEBUG/MainProcess] pidbox received method dump_active(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:595cdcc7-119b-41f2-8d71-4046b5664a47]
+[2014-11-16 21:56:31,108: DEBUG/MainProcess] pidbox received method dump_revoked() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:5aba7d23-80aa-497e-b78b-dcc65652864a]
+[2014-11-16 21:56:34,145: DEBUG/MainProcess] pidbox received method dump_conf(with_defaults=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:111bf936-e6ca-423f-95c6-a9323b5c6093]
+[2014-11-16 21:56:36,175: DEBUG/MainProcess] pidbox received method dump_tasks(taskinfoitems=[]) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:b48f2e4b-80ac-40e3-b372-b59f5eedabc9]
+[2014-11-16 21:56:39,202: DEBUG/MainProcess] pidbox received method dump_reserved(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:4511c935-27c7-4fa1-a76d-e66d05fb5a20]
+[2014-11-16 21:56:41,219: DEBUG/MainProcess] pidbox received method ping() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:53767908-92fa-4f5d-8357-ac31bc61a334]
+[2014-11-16 21:56:44,255: DEBUG/MainProcess] pidbox received method stats() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:b94083f9-8f5b-4005-98a0-c7cf15eacc81]
+[2014-11-16 21:56:46,280: DEBUG/MainProcess] pidbox received method dump_schedule(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:6ce7638a-2a19-449b-83f6-a0726d939451]
+[2014-11-16 21:56:49,314: DEBUG/MainProcess] pidbox received method dump_revoked() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:607040f4-2541-4b60-b4bc-557dc630ebf6]
+[2014-11-16 21:56:51,337: DEBUG/MainProcess] pidbox received method active_queues() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:5164f464-12d7-445b-ad43-77a5e3b6552a]
+[2014-11-16 21:56:54,382: DEBUG/MainProcess] pidbox received method dump_tasks(taskinfoitems=[]) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:54cc6b86-59c5-4788-9ef8-8944448fa952]
+[2014-11-16 21:56:56,406: DEBUG/MainProcess] pidbox received method dump_active(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:0f6aed9c-aa93-4911-9474-4c9ef229aea5]
+[2014-11-16 21:56:59,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 21:57:01,468: DEBUG/MainProcess] pidbox received method dump_conf(with_defaults=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:94530d48-e763-4edf-88b3-1d725683d1e6]
+[2014-11-16 21:57:04,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 21:57:06,533: DEBUG/MainProcess] pidbox received method dump_reserved(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:c64d2598-b4c0-4442-890b-8ea332e77350]
+[2014-11-16 21:57:09,020: INFO/MainProcess] Received task: tasks.add[a5faeb34-bbc0-43d5-ae86-ef4db1f3b102]
+[2014-11-16 21:57:09,021: DEBUG/MainProcess] TaskPool: Apply <function _fast_trace_task at 0x2e4a0c8> (args:(u'tasks.add', u'a5faeb34-bbc0-43d5-ae86-ef4db1f3b102', [9, 890], {}, {u'utc': True, u'is_eager': False, u'chord': None, u'group': None, u'args': [9, 890], u'retries': 0, u'delivery_info': {u'priority': None, u'redelivered': False, u'routing_key': u'lighting', u'exchange': u'lighting'}, u'expires': None, u'hostname': 'celery@bjlinux068', u'task': u'tasks.add', u'callbacks': None, u'correlation_id': u'a5faeb34-bbc0-43d5-ae86-ef4db1f3b102', u'errbacks': None, u'timelimit': [None, None], u'taskset': None, u'kwargs': {}, u'eta': None, u'reply_to': u'456c6049-dd61-386b-8f44-0f734d901ac8', u'id': u'a5faeb34-bbc0-43d5-ae86-ef4db1f3b102', u'headers': {}}) kwargs:{})
+[2014-11-16 21:57:09,022: INFO/Worker-12] Calling task add(9, 890)
+[2014-11-16 21:57:09,022: DEBUG/MainProcess] Task accepted: tasks.add[a5faeb34-bbc0-43d5-ae86-ef4db1f3b102] pid:13900
+[2014-11-16 21:57:09,031: DEBUG/Worker-12] Start from server, version: 0.9, properties: {u'information': u'Licensed under the MPL.  See http://www.rabbitmq.com/', u'product': u'RabbitMQ', u'copyright': u'Copyright (C) 2007-2013 GoPivotal, Inc.', u'capabilities': {u'exchange_exchange_bindings': True, u'consumer_cancel_notify': True, u'publisher_confirms': True, u'basic.nack': True}, u'platform': u'Erlang/OTP', u'version': u'3.1.5'}, mechanisms: [u'PLAIN', u'AMQPLAIN'], locales: [u'en_US']
+[2014-11-16 21:57:09,031: DEBUG/Worker-12] Open OK!
+[2014-11-16 21:57:09,032: DEBUG/Worker-12] using channel_id: 1
+[2014-11-16 21:57:09,032: DEBUG/Worker-12] Channel open
+[2014-11-16 21:57:09,094: INFO/MainProcess] Task tasks.add[a5faeb34-bbc0-43d5-ae86-ef4db1f3b102] succeeded in 0.0714638561476s: 899
+[2014-11-16 21:57:09,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 21:57:11,599: DEBUG/MainProcess] pidbox received method stats() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:a40829fb-aed9-4b44-9286-cc6353d25ead]
+[2014-11-16 21:57:14,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 21:57:16,665: DEBUG/MainProcess] pidbox received method dump_revoked() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:4115ac6f-f8aa-4318-8347-f50f8ca91f06]
+[2014-11-16 21:57:19,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 21:57:21,737: DEBUG/MainProcess] pidbox received method dump_tasks(taskinfoitems=[]) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:df3e08a2-9b1a-4b5a-a663-d655d87e92d1]
+[2014-11-16 21:57:24,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 21:57:26,802: DEBUG/MainProcess] pidbox received method ping() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:585e8507-fbcf-4d08-9138-aa28ce20eb8e]
+[2014-11-16 21:57:29,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 21:57:31,869: DEBUG/MainProcess] pidbox received method dump_schedule(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:0a8c4592-2080-4478-8ec6-1e817856bba5]
+[2014-11-16 21:57:34,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 21:57:36,934: DEBUG/MainProcess] pidbox received method active_queues() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:6eeb710e-7a73-475b-a285-a3edefeb27c0]
+[2014-11-16 21:57:39,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 21:57:41,984: DEBUG/MainProcess] pidbox received method dump_active(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:97662d62-76dc-467c-b295-abd31e8d6c19]
+[2014-11-16 21:57:44,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 21:57:45,477: INFO/MainProcess] Received task: tasks.add[368ede86-81e7-42d8-8ded-c9bf2f00ccfe]
+[2014-11-16 21:57:45,479: DEBUG/MainProcess] TaskPool: Apply <function _fast_trace_task at 0x2e4a0c8> (args:(u'tasks.add', u'368ede86-81e7-42d8-8ded-c9bf2f00ccfe', [9, 890], {}, {u'utc': True, u'is_eager': False, u'chord': None, u'group': None, u'args': [9, 890], u'retries': 0, u'delivery_info': {u'priority': None, u'redelivered': False, u'routing_key': u'lighting', u'exchange': u'lighting'}, u'expires': None, u'hostname': 'celery@bjlinux068', u'task': u'tasks.add', u'callbacks': None, u'correlation_id': u'368ede86-81e7-42d8-8ded-c9bf2f00ccfe', u'errbacks': None, u'timelimit': [None, None], u'taskset': None, u'kwargs': {}, u'eta': None, u'reply_to': u'456c6049-dd61-386b-8f44-0f734d901ac8', u'id': u'368ede86-81e7-42d8-8ded-c9bf2f00ccfe', u'headers': {}}) kwargs:{})
+[2014-11-16 21:57:45,480: DEBUG/MainProcess] Task accepted: tasks.add[368ede86-81e7-42d8-8ded-c9bf2f00ccfe] pid:13890
+[2014-11-16 21:57:45,480: INFO/Worker-11] Calling task add(9, 890)
+[2014-11-16 21:57:45,490: DEBUG/Worker-11] Start from server, version: 0.9, properties: {u'information': u'Licensed under the MPL.  See http://www.rabbitmq.com/', u'product': u'RabbitMQ', u'copyright': u'Copyright (C) 2007-2013 GoPivotal, Inc.', u'capabilities': {u'exchange_exchange_bindings': True, u'consumer_cancel_notify': True, u'publisher_confirms': True, u'basic.nack': True}, u'platform': u'Erlang/OTP', u'version': u'3.1.5'}, mechanisms: [u'PLAIN', u'AMQPLAIN'], locales: [u'en_US']
+[2014-11-16 21:57:45,491: DEBUG/Worker-11] Open OK!
+[2014-11-16 21:57:45,491: DEBUG/Worker-11] using channel_id: 1
+[2014-11-16 21:57:45,499: DEBUG/Worker-11] Channel open
+[2014-11-16 21:57:45,567: INFO/MainProcess] Task tasks.add[368ede86-81e7-42d8-8ded-c9bf2f00ccfe] succeeded in 0.0863944280427s: 899
+[2014-11-16 21:57:47,017: DEBUG/MainProcess] pidbox received method dump_conf(with_defaults=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:e6c12d6b-e30e-4870-b110-6a4d0d97e8f3]
+[2014-11-16 21:57:49,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 21:57:52,053: DEBUG/MainProcess] pidbox received method dump_reserved(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:3c4ef984-220f-4089-951a-eb48902e3811]
+[2014-11-16 21:57:54,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 21:57:57,100: DEBUG/MainProcess] pidbox received method stats() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:f7394d19-12c5-478c-840b-b25c20d04994]
+[2014-11-16 21:57:59,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 21:58:02,160: DEBUG/MainProcess] pidbox received method dump_revoked() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:b42ba7a4-50cf-424b-b068-9b8ccd020793]
+[2014-11-16 21:58:04,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 21:58:07,223: DEBUG/MainProcess] pidbox received method dump_tasks(taskinfoitems=[]) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:191aeebe-a2ad-4664-a85f-a9dfcef70a77]
+[2014-11-16 21:58:09,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 21:58:12,279: DEBUG/MainProcess] pidbox received method ping() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:65e8914d-c9dc-4d8c-b2c3-e3595f75267e]
+[2014-11-16 21:58:14,394: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 21:58:17,344: DEBUG/MainProcess] pidbox received method dump_schedule(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:d0bb3258-590d-4705-b662-98d596827c0c]
+[2014-11-16 21:58:19,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 21:58:22,402: DEBUG/MainProcess] pidbox received method active_queues() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:5db7f204-8592-414b-b8a1-68f5b30d03a9]
+[2014-11-16 21:58:24,429: DEBUG/MainProcess] pidbox received method stats() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:d3a974c8-d120-4344-96aa-8f8b56986c03]
+[2014-11-16 21:58:27,470: DEBUG/MainProcess] pidbox received method dump_active(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:9021bc52-9d00-4492-91e7-b86f918ece9c]
+[2014-11-16 21:58:29,493: DEBUG/MainProcess] pidbox received method dump_revoked() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:c246d921-2acf-4f1d-97f7-f290e0cc12b8]
+[2014-11-16 21:58:32,531: DEBUG/MainProcess] pidbox received method dump_conf(with_defaults=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:ab73c341-6d53-4c07-a4a5-0fc6902151e2]
+[2014-11-16 21:58:34,561: DEBUG/MainProcess] pidbox received method dump_tasks(taskinfoitems=[]) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:0d28bce0-c45e-4ea3-8e68-484bdb34be84]
+[2014-11-16 21:58:37,594: DEBUG/MainProcess] pidbox received method dump_reserved(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:9ee6c13d-ebd4-4f07-b49f-be37d96f2d5b]
+[2014-11-16 21:58:39,615: DEBUG/MainProcess] pidbox received method ping() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:8a5d45ad-21a6-46bb-87df-ca48d3b8cdda]
+[2014-11-16 21:58:42,656: DEBUG/MainProcess] pidbox received method stats() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:a26366b1-4679-43df-afd0-f006a017ea3e]
+[2014-11-16 21:58:44,686: DEBUG/MainProcess] pidbox received method dump_schedule(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:fdd36fee-f6ae-42ef-97ff-ca70d963a115]
+[2014-11-16 21:58:47,725: DEBUG/MainProcess] pidbox received method dump_revoked() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:dbfb7197-84c2-4a88-9b86-a8c86080341e]
+[2014-11-16 21:58:49,750: DEBUG/MainProcess] pidbox received method active_queues() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:f7df00d0-4cfb-491b-8a7b-073cb73a8b44]
+[2014-11-16 21:58:52,797: DEBUG/MainProcess] pidbox received method dump_tasks(taskinfoitems=[]) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:e266dc8e-7b0b-4278-a1f7-74e9b7185aa5]
+[2014-11-16 21:58:54,824: DEBUG/MainProcess] pidbox received method dump_active(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:d3dca3dc-7403-418b-9c47-160a41730923]
+[2014-11-16 21:58:57,863: DEBUG/MainProcess] pidbox received method ping() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:5ae43d30-0cde-4281-958a-a68edd9324d4]
+[2014-11-16 21:58:59,890: DEBUG/MainProcess] pidbox received method dump_conf(with_defaults=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:ac469c12-eeb6-422b-93e2-bde1919ca147]
+[2014-11-16 21:59:02,936: DEBUG/MainProcess] pidbox received method dump_schedule(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:62fde242-8449-4c0d-baf5-b56cea386d12]
+[2014-11-16 21:59:04,958: DEBUG/MainProcess] pidbox received method dump_reserved(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:e19fe2a7-6aa0-407e-9e01-696e36ccdef0]
+[2014-11-16 21:59:07,977: DEBUG/MainProcess] pidbox received method active_queues() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:d2d58842-2cdd-43df-9dd4-1796195a6f55]
+[2014-11-16 21:59:09,995: DEBUG/MainProcess] pidbox received method stats() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:7010b552-cab1-4138-9d1f-2777d7afd0ab]
+[2014-11-16 21:59:13,022: DEBUG/MainProcess] pidbox received method dump_active(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:39d722c3-82bc-4c19-b7a3-7a1a6b49b2ec]
+[2014-11-16 21:59:15,035: DEBUG/MainProcess] pidbox received method dump_revoked() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:9649a61d-8f70-4d8b-9a14-bc9c28692e67]
+[2014-11-16 21:59:18,054: DEBUG/MainProcess] pidbox received method dump_conf(with_defaults=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:eeade486-ae20-439c-bcf9-41cdb0cc4525]
+
+worker: Warm shutdown (MainProcess)
+[2014-11-16 21:59:18,798: DEBUG/MainProcess] | Worker: Closing Hub...
+[2014-11-16 21:59:18,798: DEBUG/MainProcess] | Worker: Closing Pool...
+[2014-11-16 21:59:18,799: DEBUG/MainProcess] | Worker: Closing Consumer...
+[2014-11-16 21:59:18,799: DEBUG/MainProcess] | Worker: Stopping Consumer...
+[2014-11-16 21:59:18,799: DEBUG/MainProcess] | Consumer: Closing Connection...
+[2014-11-16 21:59:18,799: DEBUG/MainProcess] | Consumer: Closing Events...
+[2014-11-16 21:59:18,800: DEBUG/MainProcess] | Consumer: Closing Mingle...
+[2014-11-16 21:59:18,800: DEBUG/MainProcess] | Consumer: Closing Gossip...
+[2014-11-16 21:59:18,800: DEBUG/MainProcess] | Consumer: Closing Heart...
+[2014-11-16 21:59:18,800: DEBUG/MainProcess] | Consumer: Closing Tasks...
+[2014-11-16 21:59:18,801: DEBUG/MainProcess] | Consumer: Closing Control...
+[2014-11-16 21:59:18,801: DEBUG/MainProcess] | Consumer: Closing event loop...
+[2014-11-16 21:59:18,801: DEBUG/MainProcess] | Consumer: Stopping event loop...
+[2014-11-16 21:59:18,801: DEBUG/MainProcess] | Consumer: Stopping Control...
+[2014-11-16 21:59:18,802: DEBUG/MainProcess] Closed channel #3
+[2014-11-16 21:59:18,803: DEBUG/MainProcess] | Consumer: Stopping Tasks...
+[2014-11-16 21:59:18,803: DEBUG/MainProcess] Cancelling task consumer...
+[2014-11-16 21:59:18,804: DEBUG/MainProcess] | Consumer: Stopping Heart...
+[2014-11-16 21:59:18,805: DEBUG/MainProcess] | Consumer: Stopping Gossip...
+[2014-11-16 21:59:18,810: DEBUG/MainProcess] Closed channel #2
+[2014-11-16 21:59:18,811: DEBUG/MainProcess] | Consumer: Stopping Mingle...
+[2014-11-16 21:59:18,811: DEBUG/MainProcess] | Consumer: Stopping Events...
+[2014-11-16 21:59:18,811: DEBUG/MainProcess] | Consumer: Stopping Connection...
+[2014-11-16 21:59:18,811: DEBUG/MainProcess] | Worker: Stopping Pool...
+[2014-11-16 21:59:19,826: DEBUG/MainProcess] | Worker: Stopping Hub...
+[2014-11-16 21:59:19,826: DEBUG/MainProcess] | Consumer: Shutdown Control...
+[2014-11-16 21:59:19,827: DEBUG/MainProcess] | Consumer: Shutdown Tasks...
+[2014-11-16 21:59:19,827: DEBUG/MainProcess] Cancelling task consumer...
+[2014-11-16 21:59:19,827: DEBUG/MainProcess] Closing consumer channel...
+[2014-11-16 21:59:19,827: DEBUG/MainProcess] | Consumer: Shutdown Heart...
+[2014-11-16 21:59:19,828: DEBUG/MainProcess] | Consumer: Shutdown Gossip...
+[2014-11-16 21:59:19,828: DEBUG/MainProcess] | Consumer: Shutdown Events...
+[2014-11-16 21:59:19,829: DEBUG/MainProcess] Closed channel #1
+[2014-11-16 21:59:19,830: DEBUG/MainProcess] | Consumer: Shutdown Connection...
+[2014-11-16 21:59:19,831: DEBUG/MainProcess] Closed channel #1
+ 
+ -------------- celery@bjlinux068 v3.1.16 (Cipater)
+---- **** ----- 
+--- * ***  * -- Linux-2.6.32-431.11.2.el6.x86_64-x86_64-with-centos-6.4-Final
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         tasks:0x2d8e310
+- ** ---------- .> transport:   amqp://guest:**@localhost:5672//
+- ** ---------- .> results:     amqp://
+- *** --- * --- .> concurrency: 12 (prefork)
+-- ******* ---- 
+--- ***** ----- [queues]
+ -------------- .> lighting         exchange=lighting(direct) key=lighting
+                
+
+[tasks]
+  . celery.backend_cleanup
+  . celery.chain
+  . celery.chord
+  . celery.chord_unlock
+  . celery.chunks
+  . celery.group
+  . celery.map
+  . celery.starmap
+  . tasks.add
+  . tasks.mult
+
+[2014-11-16 21:59:19,832: DEBUG/MainProcess] removing tasks from inqueue until task handler finished
+[2014-11-16 21:59:49,259: DEBUG/MainProcess] | Worker: Preparing bootsteps.
+[2014-11-16 21:59:49,261: DEBUG/MainProcess] | Worker: Building graph...
+[2014-11-16 21:59:49,261: DEBUG/MainProcess] | Worker: New boot order: {Timer, Hub, Queues (intra), Pool, Autoscaler, Autoreloader, StateDB, Beat, Consumer}
+[2014-11-16 21:59:49,263: DEBUG/MainProcess] | Consumer: Preparing bootsteps.
+[2014-11-16 21:59:49,263: DEBUG/MainProcess] | Consumer: Building graph...
+[2014-11-16 21:59:49,265: DEBUG/MainProcess] | Consumer: New boot order: {Connection, Events, Mingle, Gossip, Agent, Tasks, Control, Heart, event loop}
+[2014-11-16 21:59:49,267: DEBUG/MainProcess] | Worker: Starting Hub
+[2014-11-16 21:59:49,267: DEBUG/MainProcess] ^-- substep ok
+[2014-11-16 21:59:49,267: DEBUG/MainProcess] | Worker: Starting Pool
+[2014-11-16 21:59:49,282: DEBUG/MainProcess] ^-- substep ok
+[2014-11-16 21:59:49,282: DEBUG/MainProcess] | Worker: Starting Consumer
+[2014-11-16 21:59:49,283: DEBUG/MainProcess] | Consumer: Starting Connection
+[2014-11-16 21:59:49,290: DEBUG/MainProcess] Start from server, version: 0.9, properties: {u'information': u'Licensed under the MPL.  See http://www.rabbitmq.com/', u'product': u'RabbitMQ', u'copyright': u'Copyright (C) 2007-2013 GoPivotal, Inc.', u'capabilities': {u'exchange_exchange_bindings': True, u'consumer_cancel_notify': True, u'publisher_confirms': True, u'basic.nack': True}, u'platform': u'Erlang/OTP', u'version': u'3.1.5'}, mechanisms: [u'PLAIN', u'AMQPLAIN'], locales: [u'en_US']
+[2014-11-16 21:59:49,291: DEBUG/MainProcess] Open OK!
+[2014-11-16 21:59:49,292: INFO/MainProcess] Connected to amqp://guest:**@127.0.0.1:5672//
+[2014-11-16 21:59:49,292: DEBUG/MainProcess] ^-- substep ok
+[2014-11-16 21:59:49,292: DEBUG/MainProcess] | Consumer: Starting Events
+[2014-11-16 21:59:49,300: DEBUG/MainProcess] Start from server, version: 0.9, properties: {u'information': u'Licensed under the MPL.  See http://www.rabbitmq.com/', u'product': u'RabbitMQ', u'copyright': u'Copyright (C) 2007-2013 GoPivotal, Inc.', u'capabilities': {u'exchange_exchange_bindings': True, u'consumer_cancel_notify': True, u'publisher_confirms': True, u'basic.nack': True}, u'platform': u'Erlang/OTP', u'version': u'3.1.5'}, mechanisms: [u'PLAIN', u'AMQPLAIN'], locales: [u'en_US']
+[2014-11-16 21:59:49,301: DEBUG/MainProcess] Open OK!
+[2014-11-16 21:59:49,302: DEBUG/MainProcess] using channel_id: 1
+[2014-11-16 21:59:49,303: DEBUG/MainProcess] Channel open
+[2014-11-16 21:59:49,303: DEBUG/MainProcess] ^-- substep ok
+[2014-11-16 21:59:49,303: DEBUG/MainProcess] | Consumer: Starting Mingle
+[2014-11-16 21:59:49,303: INFO/MainProcess] mingle: searching for neighbors
+[2014-11-16 21:59:49,304: DEBUG/MainProcess] using channel_id: 1
+[2014-11-16 21:59:49,304: DEBUG/MainProcess] Channel open
+[2014-11-16 21:59:50,310: INFO/MainProcess] mingle: all alone
+[2014-11-16 21:59:50,311: DEBUG/MainProcess] ^-- substep ok
+[2014-11-16 21:59:50,311: DEBUG/MainProcess] | Consumer: Starting Gossip
+[2014-11-16 21:59:50,311: DEBUG/MainProcess] using channel_id: 2
+[2014-11-16 21:59:50,312: DEBUG/MainProcess] Channel open
+[2014-11-16 21:59:50,314: DEBUG/MainProcess] ^-- substep ok
+[2014-11-16 21:59:50,314: DEBUG/MainProcess] | Consumer: Starting Tasks
+[2014-11-16 21:59:50,317: DEBUG/MainProcess] ^-- substep ok
+[2014-11-16 21:59:50,317: DEBUG/MainProcess] | Consumer: Starting Control
+[2014-11-16 21:59:50,317: DEBUG/MainProcess] using channel_id: 3
+[2014-11-16 21:59:50,318: DEBUG/MainProcess] Channel open
+[2014-11-16 21:59:50,319: DEBUG/MainProcess] ^-- substep ok
+[2014-11-16 21:59:50,320: DEBUG/MainProcess] | Consumer: Starting Heart
+[2014-11-16 21:59:50,320: DEBUG/MainProcess] ^-- substep ok
+[2014-11-16 21:59:50,321: DEBUG/MainProcess] | Consumer: Starting event loop
+[2014-11-16 21:59:50,321: WARNING/MainProcess] celery@bjlinux068 ready.
+[2014-11-16 21:59:50,321: DEBUG/MainProcess] | Worker: Hub.register Pool...
+[2014-11-16 21:59:50,322: DEBUG/MainProcess] basic.qos: prefetch_count->48
+[2014-11-16 21:59:50,339: INFO/MainProcess] Received task: tasks.add[d79b1b15-2c6a-42e5-80a0-239d34e1a970]
+[2014-11-16 21:59:50,339: DEBUG/MainProcess] TaskPool: Apply <function _fast_trace_task at 0x2c41a28> (args:(u'tasks.add', u'd79b1b15-2c6a-42e5-80a0-239d34e1a970', [9, 890], {}, {u'utc': True, u'is_eager': False, u'chord': None, u'group': None, u'args': [9, 890], u'retries': 0, u'delivery_info': {u'priority': None, u'redelivered': False, u'routing_key': u'lighting', u'exchange': u'lighting'}, u'expires': None, u'hostname': 'celery@bjlinux068', u'task': u'tasks.add', u'callbacks': None, u'correlation_id': u'd79b1b15-2c6a-42e5-80a0-239d34e1a970', u'errbacks': None, u'timelimit': [None, None], u'taskset': None, u'kwargs': {}, u'eta': None, u'reply_to': u'f448e2c4-1267-356f-8d51-e273b9e1da29', u'id': u'd79b1b15-2c6a-42e5-80a0-239d34e1a970', u'headers': {}}) kwargs:{})
+[2014-11-16 21:59:50,341: DEBUG/MainProcess] Task accepted: tasks.add[d79b1b15-2c6a-42e5-80a0-239d34e1a970] pid:21475
+[2014-11-16 21:59:50,341: INFO/Worker-9] Calling task add(9, 890)
+[2014-11-16 21:59:50,341: INFO/Worker-9] New process starting
+[2014-11-16 21:59:50,347: DEBUG/MainProcess] pidbox received method dump_reserved(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:1e897dfe-17eb-4657-b389-ffd981dc27cd]
+[2014-11-16 21:59:50,359: DEBUG/Worker-9] Start from server, version: 0.9, properties: {u'information': u'Licensed under the MPL.  See http://www.rabbitmq.com/', u'product': u'RabbitMQ', u'copyright': u'Copyright (C) 2007-2013 GoPivotal, Inc.', u'capabilities': {u'exchange_exchange_bindings': True, u'consumer_cancel_notify': True, u'publisher_confirms': True, u'basic.nack': True}, u'platform': u'Erlang/OTP', u'version': u'3.1.5'}, mechanisms: [u'PLAIN', u'AMQPLAIN'], locales: [u'en_US']
+[2014-11-16 21:59:50,360: DEBUG/Worker-9] Open OK!
+[2014-11-16 21:59:50,360: DEBUG/Worker-9] using channel_id: 1
+[2014-11-16 21:59:50,361: DEBUG/Worker-9] Channel open
+[2014-11-16 21:59:50,363: ERROR/MainProcess] Task tasks.add[d79b1b15-2c6a-42e5-80a0-239d34e1a970] raised unexpected: AssertionError('daemonic processes are not allowed to have children',)
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/site-packages/celery/app/trace.py", line 240, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/lib/python2.6/site-packages/celery/app/trace.py", line 437, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/abhishek/dev/python/celery/tasks.py", line 27, in add
+    p.start()
+  File "/usr/lib64/python2.6/multiprocessing/process.py", line 98, in start
+    'daemonic processes are not allowed to have children'
+AssertionError: daemonic processes are not allowed to have children
+[2014-11-16 21:59:51,358: DEBUG/MainProcess] pidbox received method dump_revoked() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:597df3e0-c23b-4d2e-9324-a57a344dc39b]
+[2014-11-16 21:59:53,384: DEBUG/MainProcess] pidbox received method active_queues() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:75b07a3a-24d0-4872-8125-990fac8be685]
+[2014-11-16 21:59:55,408: DEBUG/MainProcess] pidbox received method stats() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:05ca9fe5-da01-49ca-b349-dbea4eb259e9]
+[2014-11-16 21:59:58,444: DEBUG/MainProcess] pidbox received method dump_active(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:765f0773-f7e9-44fd-8155-48b520138c4e]
+[2014-11-16 22:00:00,464: DEBUG/MainProcess] pidbox received method dump_revoked() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:57c68f79-d57b-4d5b-9cd8-daee529700cb]
+[2014-11-16 22:00:03,506: DEBUG/MainProcess] pidbox received method dump_conf(with_defaults=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:abf944e8-dd26-4cd0-8bbc-a4f9933c5bb8]
+[2014-11-16 22:00:05,539: DEBUG/MainProcess] pidbox received method dump_tasks(taskinfoitems=[]) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:f0f13dec-2d0f-42bc-a593-7db84ed36c6b]
+[2014-11-16 22:00:08,579: DEBUG/MainProcess] pidbox received method dump_reserved(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:3824a787-ed4d-4b65-ac6e-481a98e297cb]
+[2014-11-16 22:00:10,479: INFO/MainProcess] Received task: tasks.add[6e313322-a864-413b-aa05-d3f2935e0df5]
+[2014-11-16 22:00:10,480: DEBUG/MainProcess] TaskPool: Apply <function _fast_trace_task at 0x2c41a28> (args:(u'tasks.add', u'6e313322-a864-413b-aa05-d3f2935e0df5', [9, 890], {}, {u'utc': True, u'is_eager': False, u'chord': None, u'group': None, u'args': [9, 890], u'retries': 0, u'delivery_info': {u'priority': None, u'redelivered': False, u'routing_key': u'lighting', u'exchange': u'lighting'}, u'expires': None, u'hostname': 'celery@bjlinux068', u'task': u'tasks.add', u'callbacks': None, u'correlation_id': u'6e313322-a864-413b-aa05-d3f2935e0df5', u'errbacks': None, u'timelimit': [None, None], u'taskset': None, u'kwargs': {}, u'eta': None, u'reply_to': u'f448e2c4-1267-356f-8d51-e273b9e1da29', u'id': u'6e313322-a864-413b-aa05-d3f2935e0df5', u'headers': {}}) kwargs:{})
+[2014-11-16 22:00:10,481: DEBUG/MainProcess] Task accepted: tasks.add[6e313322-a864-413b-aa05-d3f2935e0df5] pid:21468
+[2014-11-16 22:00:10,481: INFO/Worker-2] Calling task add(9, 890)
+[2014-11-16 22:00:10,482: INFO/Worker-2] New process starting
+[2014-11-16 22:00:10,496: DEBUG/Worker-2] Start from server, version: 0.9, properties: {u'information': u'Licensed under the MPL.  See http://www.rabbitmq.com/', u'product': u'RabbitMQ', u'copyright': u'Copyright (C) 2007-2013 GoPivotal, Inc.', u'capabilities': {u'exchange_exchange_bindings': True, u'consumer_cancel_notify': True, u'publisher_confirms': True, u'basic.nack': True}, u'platform': u'Erlang/OTP', u'version': u'3.1.5'}, mechanisms: [u'PLAIN', u'AMQPLAIN'], locales: [u'en_US']
+[2014-11-16 22:00:10,497: DEBUG/Worker-2] Open OK!
+[2014-11-16 22:00:10,497: DEBUG/Worker-2] using channel_id: 1
+[2014-11-16 22:00:10,498: DEBUG/Worker-2] Channel open
+[2014-11-16 22:00:10,596: ERROR/MainProcess] Task tasks.add[6e313322-a864-413b-aa05-d3f2935e0df5] raised unexpected: AssertionError('daemonic processes are not allowed to have children',)
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/site-packages/celery/app/trace.py", line 240, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/lib/python2.6/site-packages/celery/app/trace.py", line 437, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/abhishek/dev/python/celery/tasks.py", line 27, in add
+    p.start()
+  File "/usr/lib64/python2.6/multiprocessing/process.py", line 98, in start
+    'daemonic processes are not allowed to have children'
+AssertionError: daemonic processes are not allowed to have children
+[2014-11-16 22:00:10,602: DEBUG/MainProcess] pidbox received method ping() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:ef9bc4ed-501f-489c-ac1f-cbdf63b7a455]
+[2014-11-16 22:00:13,643: DEBUG/MainProcess] pidbox received method stats() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:3c20a6e3-3942-4d87-9800-6a75e16f36e8]
+[2014-11-16 22:00:15,671: DEBUG/MainProcess] pidbox received method dump_schedule(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:33d5b525-44f3-4fbf-912f-56c659ad43e4]
+[2014-11-16 22:00:18,703: DEBUG/MainProcess] pidbox received method dump_revoked() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:93388ea4-22d7-4ee5-8b40-e563833da609]
+[2014-11-16 22:00:20,730: DEBUG/MainProcess] pidbox received method active_queues() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:707c20f7-1799-4198-80db-718f72b145b4]
+[2014-11-16 22:00:23,773: DEBUG/MainProcess] pidbox received method dump_tasks(taskinfoitems=[]) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:4a8a4a22-d45e-4e95-921b-13d866f691e7]
+[2014-11-16 22:00:25,797: DEBUG/MainProcess] pidbox received method dump_active(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:7a0f66f1-d243-4623-9da3-d4d0a0ff23b9]
+[2014-11-16 22:00:28,836: DEBUG/MainProcess] pidbox received method ping() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:9a9fc25e-7c1f-4b38-a54c-06ed168aca44]
+[2014-11-16 22:00:30,855: DEBUG/MainProcess] pidbox received method dump_conf(with_defaults=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:2ab55be6-5eb5-4a92-8287-62dd4a7cedf3]
+[2014-11-16 22:00:33,901: DEBUG/MainProcess] pidbox received method dump_schedule(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:28d6ea8c-6fb9-41ff-a096-eefc1ba4124f]
+[2014-11-16 22:00:35,921: DEBUG/MainProcess] pidbox received method dump_reserved(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:eeea85db-6bb4-4202-8012-6280c3f9a70e]
+[2014-11-16 22:00:38,958: DEBUG/MainProcess] pidbox received method active_queues() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:00c39b35-2a9f-4653-8f5f-72aff7b1ca16]
+[2014-11-16 22:00:40,975: DEBUG/MainProcess] pidbox received method stats() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:a363ac12-1057-4af6-901c-38c1e410b2a4]
+[2014-11-16 22:00:44,000: DEBUG/MainProcess] pidbox received method dump_active(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:0584719d-ea9b-4200-80e8-8c4a4880b2d7]
+[2014-11-16 22:00:46,012: DEBUG/MainProcess] pidbox received method dump_revoked() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:40d39e7d-a029-4604-9ebf-940dec8e7a8d]
+[2014-11-16 22:00:49,032: DEBUG/MainProcess] pidbox received method dump_conf(with_defaults=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:025889ce-9e8f-488e-b953-3276c37439d3]
+[2014-11-16 22:00:51,048: DEBUG/MainProcess] pidbox received method dump_tasks(taskinfoitems=[]) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:d8025792-3adc-438a-a3a9-d4a48a5f43fb]
+[2014-11-16 22:00:54,066: DEBUG/MainProcess] pidbox received method dump_reserved(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:298dde4c-6546-45d0-9de4-907d7c5e2170]
+[2014-11-16 22:00:56,086: DEBUG/MainProcess] pidbox received method ping() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:4a522cd7-e2b0-4aff-bc52-22b52ef3aab1]
+[2014-11-16 22:00:59,113: DEBUG/MainProcess] pidbox received method stats() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:2fdd2af2-e39d-4465-8dd4-7f8f9eea25e9]
+[2014-11-16 22:01:01,134: DEBUG/MainProcess] pidbox received method dump_schedule(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:99bc33b6-73f5-4c3e-b2dd-356895daebf4]
+[2014-11-16 22:01:04,155: DEBUG/MainProcess] pidbox received method dump_revoked() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:171d6eab-2657-444a-8714-bd766d4a3558]
+[2014-11-16 22:01:06,171: DEBUG/MainProcess] pidbox received method active_queues() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:9c56699b-2558-4523-bfff-67c0dd98aac9]
+[2014-11-16 22:01:09,201: DEBUG/MainProcess] pidbox received method dump_tasks(taskinfoitems=[]) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:4cd2f584-c3c4-4715-a1c4-42913f759685]
+[2014-11-16 22:01:11,220: DEBUG/MainProcess] pidbox received method dump_active(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:88f9ea3f-6c34-423f-9409-3443fa4ce2bf]
+[2014-11-16 22:01:14,242: DEBUG/MainProcess] pidbox received method ping() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:6a11522d-1c6c-467a-993b-940956864dd6]
+[2014-11-16 22:01:16,265: DEBUG/MainProcess] pidbox received method dump_conf(with_defaults=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:9967c839-409d-4ec7-b99a-0f5736c99848]
+[2014-11-16 22:01:19,309: DEBUG/MainProcess] pidbox received method dump_schedule(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:8d66e4e9-7cf0-4a38-8f11-1630866044d2]
+[2014-11-16 22:01:21,333: DEBUG/MainProcess] pidbox received method dump_reserved(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:d9f1ee0c-462f-47a3-a066-182409596190]
+[2014-11-16 22:01:24,362: DEBUG/MainProcess] pidbox received method active_queues() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:50353514-c1d7-4f0e-ad56-99d058926521]
+[2014-11-16 22:01:26,388: DEBUG/MainProcess] pidbox received method stats() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:35fbe586-8853-4da6-a0bf-ccdeaf281c11]
+[2014-11-16 22:01:29,394: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 22:01:29,395: INFO/MainProcess] Events of group {task} enabled by remote.
+[2014-11-16 22:01:31,454: DEBUG/MainProcess] pidbox received method dump_revoked() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:64796e21-e7c6-49b1-8be0-3925a97f038c]
+[2014-11-16 22:01:34,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 22:01:36,524: DEBUG/MainProcess] pidbox received method dump_tasks(taskinfoitems=[]) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:c15bfa80-04d7-429d-84e0-dee999b6efcc]
+[2014-11-16 22:01:39,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 22:01:41,586: DEBUG/MainProcess] pidbox received method ping() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:3dae95db-e5e4-49d0-b31c-ab52ea3bbf6f]
+[2014-11-16 22:01:44,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 22:01:46,651: DEBUG/MainProcess] pidbox received method dump_schedule(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:f5353591-9a7a-4daf-8a95-7a8b84453ece]
+[2014-11-16 22:01:49,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 22:01:51,712: DEBUG/MainProcess] pidbox received method active_queues() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:ddff70b0-6711-4474-abd5-0a662da71d1d]
+[2014-11-16 22:01:54,394: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 22:01:56,781: DEBUG/MainProcess] pidbox received method dump_active(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:59437714-e4ef-4907-a9b4-3e86f88e0072]
+[2014-11-16 22:01:59,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 22:02:01,846: DEBUG/MainProcess] pidbox received method dump_conf(with_defaults=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:71ebbf61-0c65-4b0a-89f1-a5befa29f020]
+[2014-11-16 22:02:04,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 22:02:06,900: DEBUG/MainProcess] pidbox received method dump_reserved(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:7d41afa4-e414-41b7-b345-c5c7f4b331ee]
+[2014-11-16 22:02:09,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 22:02:11,978: DEBUG/MainProcess] pidbox received method stats() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:c78dd062-88d5-4030-a543-f217fd2c7a2d]
+[2014-11-16 22:02:14,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 22:02:17,024: DEBUG/MainProcess] pidbox received method dump_revoked() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:9f242811-75f8-450d-bf6a-f0aff7dcc71e]
+[2014-11-16 22:02:19,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 22:02:22,076: DEBUG/MainProcess] pidbox received method dump_tasks(taskinfoitems=[]) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:da100bfb-83e9-4b49-82ca-5ead545e403f]
+[2014-11-16 22:02:24,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 22:02:27,126: DEBUG/MainProcess] pidbox received method ping() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:7856b052-b920-4343-87ae-a31eca6a9252]
+[2014-11-16 22:02:29,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 22:02:32,189: DEBUG/MainProcess] pidbox received method dump_schedule(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:a33c85f2-676a-4f47-91c7-7370d9c9325d]
+[2014-11-16 22:02:34,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 22:02:37,245: DEBUG/MainProcess] pidbox received method active_queues() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:6ba427c5-2f7e-45f3-aff8-e2f8d75dfbf0]
+[2014-11-16 22:02:39,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 22:02:42,303: DEBUG/MainProcess] pidbox received method dump_active(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:5fec2760-4638-4279-9079-9da00a0677bd]
+[2014-11-16 22:02:44,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 22:02:47,354: DEBUG/MainProcess] pidbox received method dump_conf(with_defaults=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:4bf8ab79-2298-4188-a9bf-eccb6d485690]
+[2014-11-16 22:02:49,395: DEBUG/MainProcess] pidbox received method enable_events() [reply_to:None ticket:None]
+[2014-11-16 22:02:52,420: DEBUG/MainProcess] pidbox received method dump_reserved(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:2234ac46-d348-49aa-b1f5-90a99964fe65]
+[2014-11-16 22:02:54,443: DEBUG/MainProcess] pidbox received method ping() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:2306bd27-bf6a-4b39-bcf1-1caf8e2a3528]
+[2014-11-16 22:02:57,479: DEBUG/MainProcess] pidbox received method stats() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:1b1fa5ac-6fc5-45ba-b9bf-4368dc71f36f]
+[2014-11-16 22:02:59,508: DEBUG/MainProcess] pidbox received method dump_schedule(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:6e605d85-db28-455f-ac8f-4a333b1abf9f]
+[2014-11-16 22:03:02,543: DEBUG/MainProcess] pidbox received method dump_revoked() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:75b0daa0-66d5-4bec-a02d-4dc467982c35]
+[2014-11-16 22:03:04,569: DEBUG/MainProcess] pidbox received method active_queues() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:7aa83ac4-3180-400a-97ab-7e0e33800306]
+[2014-11-16 22:03:07,604: DEBUG/MainProcess] pidbox received method dump_tasks(taskinfoitems=[]) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:547b4273-b4df-4277-8606-b6f0ae2a19a6]
+[2014-11-16 22:03:09,621: DEBUG/MainProcess] pidbox received method dump_active(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:a577803a-117d-40af-a63a-941e1adc6c90]
+[2014-11-16 22:03:12,652: DEBUG/MainProcess] pidbox received method ping() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:8698af64-e982-4185-8592-5f3a04500340]
+[2014-11-16 22:03:14,673: DEBUG/MainProcess] pidbox received method dump_conf(with_defaults=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:ac6a3452-af18-4038-8284-428c38fd0068]
+[2014-11-16 22:03:17,715: DEBUG/MainProcess] pidbox received method dump_schedule(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:fed150ee-bf6a-442c-a0bf-4bd011c69220]
+[2014-11-16 22:03:19,740: DEBUG/MainProcess] pidbox received method dump_reserved(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:fd2dad91-630d-4225-a673-1675e8e91454]
+[2014-11-16 22:03:22,775: DEBUG/MainProcess] pidbox received method active_queues() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:941a715f-ed2c-4e6e-bc40-431a5c83ae88]
+[2014-11-16 22:03:24,801: DEBUG/MainProcess] pidbox received method stats() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:dd35fa6c-8615-49da-8560-0dcca593db1c]
+[2014-11-16 22:03:27,845: DEBUG/MainProcess] pidbox received method dump_active(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:2219f6c0-7485-4d41-b96b-5d201a0981cf]
+[2014-11-16 22:03:29,865: DEBUG/MainProcess] pidbox received method dump_revoked() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:956eb043-8107-4221-ad7a-55c82b247f4a]
+[2014-11-16 22:03:32,904: DEBUG/MainProcess] pidbox received method dump_conf(with_defaults=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:3a1ab9f3-2b69-425b-a443-ff87d39c1766]
+[2014-11-16 22:03:34,936: DEBUG/MainProcess] pidbox received method dump_tasks(taskinfoitems=[]) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:ba17003b-efda-4de5-855b-2b2f4d5d2a40]
+[2014-11-16 22:03:37,965: DEBUG/MainProcess] pidbox received method dump_reserved(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:6ae31c49-9fe7-402d-bd00-6695f371c30a]
+[2014-11-16 22:03:39,980: DEBUG/MainProcess] pidbox received method ping() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:bdf6d2c7-1434-4980-abaf-1edb6130b769]
+[2014-11-16 22:03:43,004: DEBUG/MainProcess] pidbox received method stats() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:d4e6c461-74c5-4cfe-8bd2-811ac42f80ab]
+[2014-11-16 22:03:45,019: DEBUG/MainProcess] pidbox received method dump_schedule(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:d61c97ba-0a53-44e0-a158-dc2adcdd7711]
+[2014-11-16 22:03:48,038: DEBUG/MainProcess] pidbox received method dump_revoked() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:0bbe0960-24b8-4049-9699-48e698183c46]
+[2014-11-16 22:03:50,054: DEBUG/MainProcess] pidbox received method active_queues() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:0af0a7b7-e615-4cff-b212-b2288872918c]
+[2014-11-16 22:03:53,092: DEBUG/MainProcess] pidbox received method dump_tasks(taskinfoitems=[]) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:07a4fc2d-6a69-4513-8a70-f1e9e28afc61]
+[2014-11-16 22:03:55,116: DEBUG/MainProcess] pidbox received method dump_active(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:30dfeff9-bcb1-41e2-af47-b8a9c86af271]
+[2014-11-16 22:03:58,142: DEBUG/MainProcess] pidbox received method ping() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:d4dddc4c-f02c-4b1f-b216-e61093909242]
+[2014-11-16 22:04:00,165: DEBUG/MainProcess] pidbox received method dump_conf(with_defaults=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:4dbcf250-6149-47c7-bc06-266b884bc0bc]
+[2014-11-16 22:04:03,202: DEBUG/MainProcess] pidbox received method dump_schedule(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:9091ab0c-8675-43e4-942d-b4979634902e]
+[2014-11-16 22:04:05,222: DEBUG/MainProcess] pidbox received method dump_reserved(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:cfb2082e-40c6-4e35-b084-6e95bf9d563d]
+[2014-11-16 22:04:08,255: DEBUG/MainProcess] pidbox received method active_queues() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:3a39214c-f2e1-4cf6-a6d2-beb3e74ad3a0]
+[2014-11-16 22:04:10,279: DEBUG/MainProcess] pidbox received method stats() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:19093241-5306-4192-b7d9-514898a564b1]
+[2014-11-16 22:04:13,317: DEBUG/MainProcess] pidbox received method dump_active(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:1cd7f24a-71ed-49cb-8ff8-81ddbd3a9d78]
+[2014-11-16 22:04:15,341: DEBUG/MainProcess] pidbox received method dump_revoked() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:6066319c-ad51-4084-86c7-6dbdee2538f3]
+[2014-11-16 22:04:18,378: DEBUG/MainProcess] pidbox received method dump_conf(with_defaults=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:b7db082f-1ee7-40d9-baa0-c2d2630ec713]
+[2014-11-16 22:04:20,407: DEBUG/MainProcess] pidbox received method dump_tasks(taskinfoitems=[]) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:7ca5439f-6529-4e53-8cbf-ceb2735eef97]
+[2014-11-16 22:04:23,444: DEBUG/MainProcess] pidbox received method dump_reserved(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:a301e85a-f3a7-4326-ba91-54ecc756bd69]
+[2014-11-16 22:04:25,467: DEBUG/MainProcess] pidbox received method ping() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:a41c2944-1dc7-4352-b2dd-f2d2d38085a6]
+[2014-11-16 22:04:28,505: DEBUG/MainProcess] pidbox received method stats() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:7feb3608-6d16-4dfd-8650-f6b46c9b9719]
+[2014-11-16 22:04:30,531: DEBUG/MainProcess] pidbox received method dump_schedule(safe=False) [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:bb8ac7a8-b648-41a6-b59b-9abd19e84daa]
+[2014-11-16 22:04:33,565: DEBUG/MainProcess] pidbox received method dump_revoked() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:b2536fae-28a8-4753-80e1-730fa41ff978]
+[2014-11-16 22:04:35,591: DEBUG/MainProcess] pidbox received method active_queues() [reply_to:{u'routing_key': u'b9abc6df-0b5e-3e3b-8561-3ff16e10eb18', u'exchange': u'reply.celery.pidbox'} ticket:32fc1cda-f3bc-4487-af5d-d22bc6f6045d]
+
+worker: Warm shutdown (MainProcess)
+[2014-11-16 22:04:36,536: DEBUG/MainProcess] | Worker: Closing Hub...
+[2014-11-16 22:04:36,536: DEBUG/MainProcess] | Worker: Closing Pool...
+[2014-11-16 22:04:36,536: DEBUG/MainProcess] | Worker: Closing Consumer...
+[2014-11-16 22:04:36,536: DEBUG/MainProcess] | Worker: Stopping Consumer...
+[2014-11-16 22:04:36,536: DEBUG/MainProcess] | Consumer: Closing Connection...
+[2014-11-16 22:04:36,537: DEBUG/MainProcess] | Consumer: Closing Events...
+[2014-11-16 22:04:36,537: DEBUG/MainProcess] | Consumer: Closing Mingle...
+[2014-11-16 22:04:36,537: DEBUG/MainProcess] | Consumer: Closing Gossip...
+[2014-11-16 22:04:36,537: DEBUG/MainProcess] | Consumer: Closing Tasks...
+[2014-11-16 22:04:36,537: DEBUG/MainProcess] | Consumer: Closing Control...
+[2014-11-16 22:04:36,537: DEBUG/MainProcess] | Consumer: Closing Heart...
+[2014-11-16 22:04:36,537: DEBUG/MainProcess] | Consumer: Closing event loop...
+[2014-11-16 22:04:36,537: DEBUG/MainProcess] | Consumer: Stopping event loop...
+[2014-11-16 22:04:36,537: DEBUG/MainProcess] | Consumer: Stopping Heart...
+[2014-11-16 22:04:36,538: DEBUG/MainProcess] | Consumer: Stopping Control...
+[2014-11-16 22:04:36,538: DEBUG/MainProcess] Closed channel #3
+[2014-11-16 22:04:36,539: DEBUG/MainProcess] | Consumer: Stopping Tasks...
+[2014-11-16 22:04:36,539: DEBUG/MainProcess] Cancelling task consumer...
+[2014-11-16 22:04:36,540: DEBUG/MainProcess] | Consumer: Stopping Gossip...
+[2014-11-16 22:04:36,542: DEBUG/MainProcess] Closed channel #2
+[2014-11-16 22:04:36,542: DEBUG/MainProcess] | Consumer: Stopping Mingle...
+[2014-11-16 22:04:36,542: DEBUG/MainProcess] | Consumer: Stopping Events...
+[2014-11-16 22:04:36,543: DEBUG/MainProcess] | Consumer: Stopping Connection...
+[2014-11-16 22:04:36,543: DEBUG/MainProcess] | Worker: Stopping Pool...
+[2014-11-16 22:04:37,551: DEBUG/MainProcess] | Worker: Stopping Hub...
+[2014-11-16 22:04:37,551: DEBUG/MainProcess] | Consumer: Shutdown Heart...
+[2014-11-16 22:04:37,551: DEBUG/MainProcess] | Consumer: Shutdown Control...
+[2014-11-16 22:04:37,552: DEBUG/MainProcess] | Consumer: Shutdown Tasks...
+[2014-11-16 22:04:37,552: DEBUG/MainProcess] Cancelling task consumer...
+[2014-11-16 22:04:37,552: DEBUG/MainProcess] Closing consumer channel...
+[2014-11-16 22:04:37,552: DEBUG/MainProcess] | Consumer: Shutdown Gossip...
+[2014-11-16 22:04:37,552: DEBUG/MainProcess] | Consumer: Shutdown Events...
+[2014-11-16 22:04:37,553: DEBUG/MainProcess] Closed channel #1
+[2014-11-16 22:04:37,554: DEBUG/MainProcess] | Consumer: Shutdown Connection...
+[2014-11-16 22:04:37,554: DEBUG/MainProcess] Closed channel #1
+ 
+ -------------- celery@bjlinux068 v3.1.16 (Cipater)
+---- **** ----- 
+--- * ***  * -- Linux-2.6.32-431.11.2.el6.x86_64-x86_64-with-centos-6.4-Final
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         tasks:0x2b8c3d0
+- ** ---------- .> transport:   amqp://guest:**@localhost:5672//
+- ** ---------- .> results:     amqp://
+- *** --- * --- .> concurrency: 12 (prefork)
+-- ******* ---- 
+--- ***** ----- [queues]
+ -------------- .> lighting         exchange=lighting(direct) key=lighting
+                
+
+[tasks]
+  . celery.backend_cleanup
+  . celery.chain
+  . celery.chord
+  . celery.chord_unlock
+  . celery.chunks
+  . celery.group
+  . celery.map
+  . celery.starmap
+  . tasks.add
+  . tasks.mult
+
+[2014-11-16 22:04:37,554: DEBUG/MainProcess] removing tasks from inqueue until task handler finished

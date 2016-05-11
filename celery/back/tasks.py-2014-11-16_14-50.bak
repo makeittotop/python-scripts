@@ -1,0 +1,22 @@
+#!/usr/bin/env python2.7
+
+from celery import Celery, Task
+
+from log import register_task_logger
+
+app = Celery('tasks')
+app.config_from_object('celeryconfig')
+
+@app.task
+@register_task_logger(__name__)
+class AddTask(Task):
+    def run(self, x, y):
+        self.log.info("Calling task AddTask(%d, %d)" % (x, y))
+        return x + y
+
+@app.task
+@register_task_logger(__name__)
+class MultTask(Task):
+    def run(self, x, y):
+        self.log.info("Calling task mult(%d, %d)" % (x, y))
+        return x * y

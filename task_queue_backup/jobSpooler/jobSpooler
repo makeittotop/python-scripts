@@ -1,0 +1,3 @@
+#!/usr/bin/env python
+from bs_pipeline.bs_jobSpooler.bs_jobSpooler import *
+showSpooler()

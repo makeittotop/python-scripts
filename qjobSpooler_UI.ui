@@ -1,0 +1,1223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>qSpooler</class>
+ <widget class="QDialog" name="qSpooler">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>708</width>
+    <height>629</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>DejaVu Sans</family>
+    <pointsize>10</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Alfred/Tractor Job Spooler</string>
+  </property>
+  <widget class="QComboBox" name="qTaskType">
+   <property name="geometry">
+    <rect>
+     <x>531</x>
+     <y>10</y>
+     <width>170</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="editable">
+    <bool>false</bool>
+   </property>
+   <property name="sizeAdjustPolicy">
+    <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
+   </property>
+   <item>
+    <property name="text">
+     <string>Arnold Render</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Renderman Render</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Massive Simulation</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Katana Batch</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Nuke Render</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Maya Batch</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Maya Script</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Mentalray Render</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>FumeFX Sim</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>FumeFX Render</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Renderman .rib gen</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Arnold .ass gen</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Mentalray .mi gen</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Fusion Render</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Shake Render</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>448</x>
+     <y>14</y>
+     <width>81</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Task Type:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="alfredBtn">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>520</x>
+     <y>583</y>
+     <width>180</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Send to Alfred</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="tractorBtn">
+   <property name="geometry">
+    <rect>
+     <x>520</x>
+     <y>578</y>
+     <width>180</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Launch</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="qBtn">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>111</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Quit</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="browseSeqBtn">
+   <property name="geometry">
+    <rect>
+     <x>475</x>
+     <y>264</y>
+     <width>31</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>....</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>11</x>
+     <y>244</y>
+     <width>151</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Task Related File(s):</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="seqTo">
+   <property name="geometry">
+    <rect>
+     <x>638</x>
+     <y>284</y>
+     <width>64</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>9999999</number>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="seqFrom">
+   <property name="geometry">
+    <rect>
+     <x>638</x>
+     <y>246</y>
+     <width>64</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+   </property>
+   <property name="maximum">
+    <number>9999999</number>
+   </property>
+   <property name="singleStep">
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>253</y>
+     <width>41</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Start</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>531</x>
+     <y>290</y>
+     <width>41</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>End</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="browseScriptBtn">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>433</y>
+     <width>31</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>....</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>307</y>
+     <width>231</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Optional Task Arguments:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>410</y>
+     <width>331</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Task script filename (Optional):</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="genTaskBtn">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>477</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Generate</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_8">
+   <property name="geometry">
+    <rect>
+     <x>95</x>
+     <y>18</y>
+     <width>381</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>DejaVu LGC Sans</family>
+     <pointsize>24</pointsize>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Job Spooler</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_10">
+   <property name="geometry">
+    <rect>
+     <x>179</x>
+     <y>49</y>
+     <width>211</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>DejaVu Sans</family>
+     <pointsize>7</pointsize>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+     <underline>true</underline>
+     <strikeout>false</strikeout>
+    </font>
+   </property>
+   <property name="text">
+    <string>w w w . n o t h i n g - r e a l . c o m</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_11">
+   <property name="geometry">
+    <rect>
+     <x>177</x>
+     <y>60</y>
+     <width>211</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>DejaVu Sans</family>
+     <pointsize>7</pointsize>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+     <underline>false</underline>
+     <strikeout>false</strikeout>
+    </font>
+   </property>
+   <property name="text">
+    <string>v i s u a l   E f f e c t s   H o u s e</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="qTaskSeq">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>264</y>
+     <width>467</width>
+     <height>32</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="qScriptPath">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>433</y>
+     <width>331</width>
+     <height>33</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>4</x>
+     <y>93</y>
+     <width>511</width>
+     <height>137</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Panel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Sunken</enum>
+   </property>
+   <property name="lineWidth">
+    <number>2</number>
+   </property>
+   <property name="midLineWidth">
+    <number>3</number>
+   </property>
+   <widget class="QPushButton" name="prjPathBtn">
+    <property name="geometry">
+     <rect>
+      <x>464</x>
+      <y>92</y>
+      <width>38</width>
+      <height>39</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>//</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>5</x>
+      <y>73</y>
+      <width>490</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Project Workspace (Net path for Render Farms):</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="taskTitle">
+    <property name="geometry">
+     <rect>
+      <x>4</x>
+      <y>25</y>
+      <width>499</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <italic>true</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>5</x>
+      <y>6</y>
+      <width>71</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Job Title:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="qPrjPath">
+    <property name="geometry">
+     <rect>
+      <x>4</x>
+      <y>92</y>
+      <width>461</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QCheckBox" name="autoStart">
+   <property name="geometry">
+    <rect>
+     <x>570</x>
+     <y>251</y>
+     <width>61</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Auto</string>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="autoEnd">
+   <property name="geometry">
+    <rect>
+     <x>570</x>
+     <y>288</y>
+     <width>61</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Auto</string>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="renderBtn">
+   <property name="geometry">
+    <rect>
+     <x>531</x>
+     <y>203</y>
+     <width>170</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Render Preview</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="renCpBtn">
+   <property name="geometry">
+    <rect>
+     <x>531</x>
+     <y>166</y>
+     <width>170</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Rename/Copy</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="renMvBtn">
+   <property name="geometry">
+    <rect>
+     <x>531</x>
+     <y>129</y>
+     <width>170</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Rename/Move</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="patchBtn">
+   <property name="geometry">
+    <rect>
+     <x>531</x>
+     <y>93</y>
+     <width>170</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Patch ASS</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_12">
+   <property name="geometry">
+    <rect>
+     <x>465</x>
+     <y>56</y>
+     <width>71</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Engine:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QFrame" name="frame_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>432</y>
+     <width>320</width>
+     <height>76</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLabel" name="label_19">
+    <property name="geometry">
+     <rect>
+      <x>227</x>
+      <y>48</y>
+      <width>91</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>samehost</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="atleastSpin">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>16</y>
+      <width>64</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
+    <property name="maximum">
+     <number>9999999</number>
+    </property>
+    <property name="value">
+     <number>1</number>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="atmostSpin">
+    <property name="geometry">
+     <rect>
+      <x>14</x>
+      <y>16</y>
+      <width>64</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
+    <property name="maximum">
+     <number>9999999</number>
+    </property>
+    <property name="value">
+     <number>1</number>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="samehostSpin">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>16</y>
+      <width>64</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
+    <property name="maximum">
+     <number>9999999</number>
+    </property>
+    <property name="value">
+     <number>1</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_18">
+    <property name="geometry">
+     <rect>
+      <x>126</x>
+      <y>48</y>
+      <width>71</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>atleast</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_17">
+    <property name="geometry">
+     <rect>
+      <x>9</x>
+      <y>48</y>
+      <width>71</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>atmost</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="label_16">
+   <property name="geometry">
+    <rect>
+     <x>11</x>
+     <y>408</y>
+     <width>111</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Slots Control:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QFrame" name="frame_3">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>544</y>
+     <width>320</width>
+     <height>76</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QSpinBox" name="periorityTxt">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>12</y>
+      <width>64</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>0</number>
+    </property>
+    <property name="maximum">
+     <number>9999999</number>
+    </property>
+    <property name="value">
+     <number>50</number>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="perTask">
+    <property name="geometry">
+     <rect>
+      <x>17</x>
+      <y>12</y>
+      <width>64</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
+    <property name="maximum">
+     <number>9999999</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_13">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>48</y>
+      <width>91</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Task Size</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="skipSpin">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>12</y>
+      <width>64</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>0</number>
+    </property>
+    <property name="maximum">
+     <number>9999999</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_14">
+    <property name="geometry">
+     <rect>
+      <x>225</x>
+      <y>48</y>
+      <width>91</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Priority</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_15">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>48</y>
+      <width>101</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Skip</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="label_20">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>520</y>
+     <width>111</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Task Control:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QPlainTextEdit" name="optionalArgs">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>330</y>
+     <width>692</width>
+     <height>69</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="profilesBox">
+   <property name="geometry">
+    <rect>
+     <x>520</x>
+     <y>477</y>
+     <width>181</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="editable">
+    <bool>false</bool>
+   </property>
+   <property name="sizeAdjustPolicy">
+    <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
+   </property>
+   <item>
+    <property name="text">
+     <string>Local Renderfarm</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Local HighMem</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Local Preview</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Vendor Renderfarm</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Vendor HighMem</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>FumeFX Sim/Ren</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Nuke blades</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="label_21">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>520</y>
+     <width>111</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Every:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QFrame" name="frame_4">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>544</y>
+     <width>131</width>
+     <height>76</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QSpinBox" name="perTask_2">
+    <property name="geometry">
+     <rect>
+      <x>35</x>
+      <y>12</y>
+      <width>64</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
+    <property name="maximum">
+     <number>9999999</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_22">
+    <property name="geometry">
+     <rect>
+      <x>11</x>
+      <y>48</y>
+      <width>111</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Frames</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="curLayerBtn">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>520</x>
+     <y>510</y>
+     <width>180</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Only Current Layer</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="engineTxt">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>52</y>
+     <width>171</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="editable">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBox">
+   <property name="geometry">
+    <rect>
+     <x>520</x>
+     <y>550</y>
+     <width>91</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>sync</string>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBox_2">
+   <property name="geometry">
+    <rect>
+     <x>620</x>
+     <y>550</y>
+     <width>111</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>render</string>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>qTaskType</tabstop>
+  <tabstop>seqFrom</tabstop>
+  <tabstop>seqTo</tabstop>
+  <tabstop>taskTitle</tabstop>
+  <tabstop>qPrjPath</tabstop>
+  <tabstop>qTaskSeq</tabstop>
+  <tabstop>qScriptPath</tabstop>
+  <tabstop>autoStart</tabstop>
+  <tabstop>autoEnd</tabstop>
+  <tabstop>patchBtn</tabstop>
+  <tabstop>renMvBtn</tabstop>
+  <tabstop>renCpBtn</tabstop>
+  <tabstop>renderBtn</tabstop>
+  <tabstop>prjPathBtn</tabstop>
+  <tabstop>browseSeqBtn</tabstop>
+  <tabstop>browseScriptBtn</tabstop>
+  <tabstop>genTaskBtn</tabstop>
+  <tabstop>alfredBtn</tabstop>
+  <tabstop>tractorBtn</tabstop>
+  <tabstop>qBtn</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>qBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>qSpooler</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>65</x>
+     <y>243</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>342</x>
+     <y>134</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
